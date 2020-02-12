@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float jumpHeight = 2f;
+    public LayerMask groundLayers;
+    public CapsuleCollider col;
     public float turnSpeed = 20f;
     Quaternion m_Rotation = Quaternion.identity;
 
@@ -15,11 +18,22 @@ public class PlayerMovement : MonoBehaviour
     {
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
+        col = GetComponent<CapsuleCollider>();
+        // get the distance to ground
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        if (IsGrounded())
+        {
+            if (Input.GetButtonDown("Jump"))
+            {
+                print("VEIKIA");
+                m_Rigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            }
+        }
+
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
@@ -37,6 +51,11 @@ public class PlayerMovement : MonoBehaviour
     {
         m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
         m_Rigidbody.MoveRotation(m_Rotation);
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z), col.radius * .1f, groundLayers);
     }
 
 }
