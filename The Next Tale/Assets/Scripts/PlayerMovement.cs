@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 m_Movement;
     Animator m_Animator;
     Rigidbody m_Rigidbody;
+    public float movementSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,24 +34,45 @@ public class PlayerMovement : MonoBehaviour
                 m_Rigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
             }
         }
-
+        
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
         m_Movement.Set(horizontal, 0f, vertical);
         m_Movement.Normalize();
-
+        
         bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
         bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         m_Animator.SetBool("IsWalking", isWalking);
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
         m_Rotation = Quaternion.LookRotation(desiredForward);
-    }
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey("w"))
+        {
+            transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed * 2.5f;
+        }
+        else if (Input.GetKey("w") && !Input.GetKey(KeyCode.LeftShift))
+        {
+            transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed;
+        }
+        else if (Input.GetKey("s"))
+        {
+            transform.position -= transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed;
+        }
+        if (Input.GetKey("a") && !Input.GetKey("d"))
+        {
+            transform.position += transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
+        }
+        else if (Input.GetKey("d") && !Input.GetKey("a"))
+        {
+            transform.position -= transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
+        }
+    
+}
     void OnAnimatorMove()
     {
         m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
-        m_Rigidbody.MoveRotation(m_Rotation);
+       // m_Rigidbody.MoveRotation(m_Rotation);
     }
 
     private bool IsGrounded()
