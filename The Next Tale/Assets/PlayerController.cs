@@ -1,5 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 2f;
     public LayerMask groundLayers;
     public CapsuleCollider col;
+    Vector3 m_Movement;
+
     void Start()
     {
         m_Animator = GetComponent<Animator>();
@@ -72,11 +75,17 @@ public class PlayerController : MonoBehaviour
 
         if (direction != Vector3.zero)
         {
+
             m_currentDirection = Vector3.Slerp(m_currentDirection, direction, Time.deltaTime * m_interpolation);
             m_currentDirection = Vector3.ClampMagnitude(m_currentDirection, 1);
             transform.rotation = Quaternion.LookRotation(m_currentDirection);
             transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime;
             //m_Rigidbody.AddForce(m_currentDirection * m_moveSpeed * Time.deltaTime);
         }
+    }
+    void OnAnimatorMove()
+    {
+        m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
+        // m_Rigidbody.MoveRotation(m_Rotation);
     }
 }

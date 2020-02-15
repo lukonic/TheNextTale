@@ -1544,7 +1544,7 @@ Animator:
     'R_Foot'\n\tTransform 'Chest'\n\tTransform 'L_Lower_Leg'\n\tTransform 'R_Hand'\n\tTransform
     'R_Lower_Leg'\n\tTransform 'R_Shoulder'\n\tTransform 'R_Lower_Arm'\n\tTransform
     'L_Shoulder'\n\tand more ...\n\tFrom animation clip 'Stovi'\n\tFrom animation
-    clip 'Vaiksto'\n\tFrom animation clip 'Vaiksto'\n\tFrom animation clip 'Stovi'"
+    clip 'Vaiksto'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -1575,7 +1575,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &4683391797088454570
@@ -1595,7 +1595,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 1
-  col: {fileID: 0}
+  col: {fileID: 4853741160558181689}
 --- !u!1 &8849344984524337648
 GameObject:
   m_ObjectHideFlags: 0
