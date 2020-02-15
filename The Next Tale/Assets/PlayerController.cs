@@ -76,6 +76,7 @@ public class PlayerController : MonoBehaviour
             m_currentDirection = Vector3.ClampMagnitude(m_currentDirection, 1);
             transform.rotation = Quaternion.LookRotation(m_currentDirection);
             transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime;
+            //m_Rigidbody.AddForce(m_currentDirection * m_moveSpeed * Time.deltaTime);
         }
     }
 }

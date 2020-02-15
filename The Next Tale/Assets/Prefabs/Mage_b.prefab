@@ -1497,9 +1497,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8849344984524172686}
   - component: {fileID: 8849344984531616338}
-  - component: {fileID: 1209671438356346340}
   - component: {fileID: 4853741160558181689}
   - component: {fileID: 6212871986787669073}
+  - component: {fileID: 4683391797088454570}
   m_Layer: 8
   m_Name: Mage_b
   m_TagString: Untagged
@@ -1538,28 +1538,16 @@ Animator:
   m_UpdateMode: 1
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'R_Upper_Arm'\n\tTransform 'L_Upper_Leg'\n\tTransform
+    'R_Foot'\n\tTransform 'Chest'\n\tTransform 'L_Lower_Leg'\n\tTransform 'R_Hand'\n\tTransform
+    'R_Lower_Leg'\n\tTransform 'R_Shoulder'\n\tTransform 'R_Lower_Arm'\n\tTransform
+    'L_Shoulder'\n\tand more ...\n\tFrom animation clip 'Stovi'\n\tFrom animation
+    clip 'Vaiksto'\n\tFrom animation clip 'Vaiksto'\n\tFrom animation clip 'Stovi'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1209671438356346340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8849344984524337646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c871bb582aa4b4db6eaf7c412aa417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpHeight: 7
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  col: {fileID: 0}
-  turnSpeed: 40
 --- !u!136 &4853741160558181689
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1590,6 +1578,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &4683391797088454570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8849344984524337646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b0793f93d43564b92f7a3d6db0e6de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_moveSpeed: 3
+  jumpHeight: 5
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  col: {fileID: 0}
 --- !u!1 &8849344984524337648
 GameObject:
   m_ObjectHideFlags: 0
