@@ -20,7 +20,7 @@ public class VaseDestroy : MonoBehaviour
     {
         if (other.gameObject == player && (player.GetComponent<Rigidbody>().velocity.y < -2))
         {
-            player.GetComponent<Rigidbody>().AddForce(Vector3.up * boostup, ForceMode.Impulse);
+            player.GetComponent<Rigidbody>().AddForce(Vector3.up * boostup, ForceMode.VelocityChange);
             Instantiate(broken, transform.position, new Quaternion(180,0,0,0));
             Instantiate(effect, transform.position + new Vector3(0, 1), new Quaternion(0, 0, 0, 0));
             Instantiate(spawn, transform.position+ new Vector3(0,0.5f), transform.rotation);

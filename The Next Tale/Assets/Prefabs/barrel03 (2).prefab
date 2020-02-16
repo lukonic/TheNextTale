@@ -155,7 +155,7 @@ MonoBehaviour:
   broken: {fileID: 4768686590841183027}
   effect: {fileID: 2418187259632976988, guid: 1443ebab3334325458970a6657990a60, type: 3}
   spawn: {fileID: 1339432344603578163, guid: 50e627be3861a9044a66a1fcfe56a0ef, type: 3}
-  boostup: 40
+  boostup: 14
 --- !u!95 &3534246150831937336
 Animator:
   serializedVersion: 3
