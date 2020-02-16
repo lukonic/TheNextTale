@@ -56,7 +56,6 @@ public class PlayerController : MonoBehaviour
         bool hasVerticalInput = !Mathf.Approximately(h, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         m_Animator.SetBool("IsWalking", isWalking);
-
         if (Input.GetKey(KeyCode.LeftControl))
         {
             v *= m_walkScale;
