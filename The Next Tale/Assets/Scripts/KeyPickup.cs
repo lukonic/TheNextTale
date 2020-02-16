@@ -5,7 +5,7 @@ using UnityEngine;
 public class KeyPickup : MonoBehaviour
 {
     GameObject player;
-    //PlayerScore playerScore;
+    PlayerScore playerScore;
     public GameObject effect;
     public float degreesPerSecond = 15.0f;
     public float amplitude = 0.1f;
@@ -21,7 +21,7 @@ public class KeyPickup : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-       // playerScore = player.GetComponent<PlayerScore>();
+        playerScore = player.GetComponent<PlayerScore>();
         posOffset = transform.position;
     }
 
@@ -30,7 +30,7 @@ public class KeyPickup : MonoBehaviour
         if (other.gameObject == player)
         {
             Instantiate(effect, transform.position, transform.rotation);
-          //  playerScore.currentScore++;
+            playerScore.currentKeys++;
             print("Veikia");
             gameObject.SetActive(false);
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - CameraFolder
+  - Vyriai
   layers:
   - Default
   - TransparentFX

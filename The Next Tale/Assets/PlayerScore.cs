@@ -8,21 +8,27 @@ public class PlayerScore : MonoBehaviour
     //Set up a variable to store how many you've collected
     private int startScore = 0;
     public int currentScore;
-    public static int score; //Needed for NPC_dialogue
+
+    private int startKeys = 0;
+    public int currentKeys;
     public Text counter;
+    public Text key;
     private GameObject player;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        currentScore = startScore;
-        counter.text = "Score: 0";
+        currentKeys = startKeys;
+        counter.text = "Keys: 0";
+        currentKeys = startKeys;
+        key.text = "Keys: 0";
     }
 
 
 
     private void Update()
     {
-        counter.text = "Keys: " + currentScore.ToString();
+        counter.text = "Score: " + currentScore.ToString();
+        key.text = "Keys: " + currentKeys.ToString();
     }
 }
