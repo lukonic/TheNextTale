@@ -10,7 +10,7 @@ public class PickUpScore : MonoBehaviour
     public float degreesPerSecond = 15.0f;
     public float amplitude = 0.1f;
     public float frequency = 1f;
-
+    private bool pickuable;
     // Position Storage Variables
     Vector3 posOffset = new Vector3();
     Vector3 tempPos = new Vector3();
@@ -23,18 +23,28 @@ public class PickUpScore : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerScore = player.GetComponent<PlayerScore>();
         posOffset = transform.position;
+        pickuable = false;
+        StartCoroutine(ExecuteAfterTime2(0.5f));
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player)
         {
-            Instantiate(effect, transform.position, transform.rotation);
-            playerScore.currentScore++;
-            print("Veikia");
-            gameObject.SetActive(false);
+            if (pickuable == true)
+            {
+                Instantiate(effect, transform.position, transform.rotation);
+                playerScore.currentScore++;
+                print("Veikia");
+                gameObject.SetActive(false);
+            }
 
         }
+    }
+    IEnumerator ExecuteAfterTime2(float time)
+    {
+        yield return new WaitForSeconds(time);
+        pickuable = true;
     }
     void Update()
     {
