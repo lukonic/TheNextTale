@@ -8,13 +8,15 @@ public class Door : MonoBehaviour
     GameObject vyriai;
     PlayerScore playerScore;
     public GameObject effect;
-    private bool atidarom;
+    private bool atidarom = false;
+    Animator m_Animator;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         vyriai = GameObject.FindGameObjectWithTag("Vyriai");
         playerScore = player.GetComponent<PlayerScore>();
+        m_Animator = GetComponent<Animator>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -24,8 +26,15 @@ public class Door : MonoBehaviour
             {
                 playerScore.currentKeys--;
                 atidarom = true;
-                StartCoroutine(ExecuteAfterTime(2.1f));
-                
+                StartCoroutine(ExecuteAfterTime(2.0f));
+            }
+            else
+            {
+                if (!atidarom)
+                {
+                    m_Animator.SetBool("neturi", true);
+                    StartCoroutine(ExecuteAfterTime2(1f));
+                }
             }
 
         }
@@ -38,8 +47,14 @@ public class Door : MonoBehaviour
         this.GetComponent<Rigidbody>().isKinematic = false;
         this.GetComponent<BoxCollider>().material.staticFriction = 1;
         this.GetComponent<BoxCollider>().material.dynamicFriction = 1;
+        this.GetComponent<Animator>().enabled = false;
         Instantiate(effect, vyriai.transform.position, new Quaternion(90, 0, 0, 0));
         atidarom = false;
+    }
+    IEnumerator ExecuteAfterTime2(float time)
+    {
+        yield return new WaitForSeconds(time);
+        m_Animator.SetBool("neturi", false);
     }
     void Update()
     {
