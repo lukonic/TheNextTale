@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - CameraFolder
   - Vyriai
+  - Catapult
   layers:
   - Default
   - TransparentFX
