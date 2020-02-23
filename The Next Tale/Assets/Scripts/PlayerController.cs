@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private float m_currentH = 0;
 
     private readonly float m_interpolation = 10;
-    private readonly float m_walkScale = 0.33f;
+    private readonly float m_walkScale = 0.75f;
 
     private Vector3 m_currentDirection = Vector3.zero;
     private Vector3 direction;
@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayers;
     public CapsuleCollider col;
     Vector3 m_Movement;
-
+    public bool Carrying;
     void Start()
     {
         m_Animator = GetComponent<Animator>();
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         if (IsGrounded())
         {
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") && Carrying == false)
             {
                 print("VEIKIA");
                 m_Rigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         bool hasVerticalInput = !Mathf.Approximately(h, 0f);
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         m_Animator.SetBool("IsWalking", isWalking);
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Carrying)
         {
             v *= m_walkScale;
             h *= m_walkScale;
