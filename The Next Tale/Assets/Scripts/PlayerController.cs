@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
+        GetComponent<BoxCollider>().enabled = false;
         // get the distance to ground
     }
     void Update()
@@ -60,6 +61,7 @@ public class PlayerController : MonoBehaviour
         {
             v *= m_walkScale;
             h *= m_walkScale;
+            
         }
 
         m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);

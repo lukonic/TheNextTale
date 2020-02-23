@@ -26,6 +26,7 @@ public class PickUpAble : MonoBehaviour
                 pickup();
                 carrying = true;
                 player.GetComponent<PlayerController>().Carrying = true;
+                player.GetComponent<BoxCollider>().enabled = true;
             }
         }
         else if (carrying == true && player.GetComponent<PlayerController>().Carrying == true)
@@ -36,13 +37,14 @@ public class PickUpAble : MonoBehaviour
                 drop();
                 carrying = false;
                 player.GetComponent<PlayerController>().Carrying = false;
+                player.GetComponent<BoxCollider>().enabled = false;
             }
         }
     }
     void pickup()
     {
         item.GetComponent<Rigidbody>().useGravity = false;
-        item.GetComponent<Rigidbody>().isKinematic = false;
+        item.GetComponent<Collider>().enabled = false;
         item.GetComponent<Rigidbody>().freezeRotation = true;
         item.layer = 2;
         item.transform.position = guide.transform.position;
@@ -52,7 +54,7 @@ public class PickUpAble : MonoBehaviour
     void drop()
     {
         item.GetComponent<Rigidbody>().useGravity = true;
-        item.GetComponent<Rigidbody>().isKinematic = false;
+        item.GetComponent<Collider>().enabled = true;
         item.GetComponent<Rigidbody>().freezeRotation = false;
         item.transform.parent = null;
         item.layer = 0;
