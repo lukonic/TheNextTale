@@ -35,13 +35,19 @@ public class PlayerController : MonoBehaviour
     {
         if (IsGrounded())
         {
+            m_Animator.SetBool("IsJumping", false);
             if (Input.GetButtonDown("Jump") && Carrying == false)
             {
                 print("VEIKIA");
                 m_Rigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
             }
         }
+        else
+        {
+            m_Animator.SetBool("IsJumping", true);
+        }
         DirectUpdate();
+        
     }
     private bool IsGrounded()
     {
