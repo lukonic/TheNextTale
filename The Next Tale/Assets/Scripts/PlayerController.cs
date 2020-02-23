@@ -61,9 +61,12 @@ public class PlayerController : MonoBehaviour
         {
             v *= m_walkScale;
             h *= m_walkScale;
-            
+            m_Animator.SetBool("IsCarrying", true);
         }
-
+        else if(!Carrying)
+        {
+            m_Animator.SetBool("IsCarrying", false);
+        }
         m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
         m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
 
