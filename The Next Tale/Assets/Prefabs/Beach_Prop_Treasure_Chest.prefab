@@ -240,8 +240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33faa1cc1d848d4dacb4d3b4166814c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn: {fileID: 1339432344603578163, guid: 50e627be3861a9044a66a1fcfe56a0ef, type: 3}
-  amount: 5
+  spawn: {fileID: 3159755452575017313, guid: a6ce207731f5fb54e8df28080f28dee9, type: 3}
+  amount: 1
 --- !u!65 &4102942300019060625
 BoxCollider:
   m_ObjectHideFlags: 0
