@@ -22,7 +22,7 @@ public class Catapult_Button : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player && (player.GetComponent<Rigidbody>().velocity.y < -1))
+        if (other.gameObject == player && (player.GetComponent<Rigidbody>().velocity.y < -0.5))
         {
             if (cooldown == false)
             {

@@ -1119,6 +1119,7 @@ MonoBehaviour:
   gem: {fileID: 964202900}
   secret: {fileID: 469305147}
   TimeTaken: {fileID: 1150720911}
+  effect: {fileID: 0}
   Gems: 7
   Secrets: 1
 --- !u!4 &183451832 stripped
@@ -9825,6 +9826,12 @@ PrefabInstance:
       propertyPath: key
       value: 
       objectReference: {fileID: 1604455685}
+    - target: {fileID: 5303259242653572935, guid: ddadde94274842e4fbf16fab5af8f156,
+        type: 3}
+      propertyPath: effect
+      value: 
+      objectReference: {fileID: 1223526616464650, guid: c590b17884b119046bc6412066500b7d,
+        type: 3}
     - target: {fileID: 8334199495461008739, guid: ddadde94274842e4fbf16fab5af8f156,
         type: 3}
       propertyPath: m_LocalPosition.x
