@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawn: {fileID: 3159755452575017313, guid: a6ce207731f5fb54e8df28080f28dee9, type: 3}
+  effect: {fileID: 997830513365987899, guid: a692ea3f41689254893a4998b58f27fc, type: 3}
   amount: 1
 --- !u!65 &4102942300019060625
 BoxCollider:

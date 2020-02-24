@@ -7,6 +7,7 @@ public class Chest : MonoBehaviour
     // Start is called before the first frame update
     GameObject player;
     public GameObject spawn;
+    public GameObject effect;
     public int amount;
     Animator m_Animator;
     private bool open;
@@ -25,6 +26,7 @@ public class Chest : MonoBehaviour
             for (int i = 0; i < amount; i++)
             {
                 Instantiate(spawn, transform.position + new Vector3(0, 0.5f), transform.rotation);
+                Instantiate(effect, transform.position + new Vector3(0, 1f), transform.rotation);
             }
             
             m_Animator.SetBool("Atidaryta", true);
