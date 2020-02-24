@@ -8,6 +8,7 @@ TagManager:
   - CameraFolder
   - Vyriai
   - Catapult
+  - Box
   layers:
   - Default
   - TransparentFX

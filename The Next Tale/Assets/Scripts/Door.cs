@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     public GameObject effect;
     private bool atidarom = false;
     Animator m_Animator;
+    private bool islausta = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +21,13 @@ public class Door : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject == player && islausta == false)
         {
             if (playerScore.currentKeys > 0)
             {
                 playerScore.currentKeys--;
                 atidarom = true;
+                islausta = true;
                 StartCoroutine(ExecuteAfterTime(2.0f));
             }
             else

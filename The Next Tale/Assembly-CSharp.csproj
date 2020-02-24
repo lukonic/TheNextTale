@@ -55,7 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\HoldingButton.cs" />
      <Compile Include="Assets\MovingPlatform.cs" />
+     <Compile Include="Assets\Moving_Platform_Hold.cs" />
      <Compile Include="Assets\PickUpAble.cs" />
      <Compile Include="Assets\PickUpSecret.cs" />
      <Compile Include="Assets\Scripts\CameraColission.cs" />
