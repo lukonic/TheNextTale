@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
     }
     private bool IsGrounded()
     {
-        return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z), col.radius * .3f, groundLayers);
+        return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z), col.radius * 0.5f, groundLayers);
     }
     private void DirectUpdate()
     {
