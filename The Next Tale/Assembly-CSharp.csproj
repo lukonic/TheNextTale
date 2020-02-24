@@ -55,19 +55,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\HoldingButton.cs" />
-     <Compile Include="Assets\MovingPlatform.cs" />
-     <Compile Include="Assets\Moving_Platform_Hold.cs" />
-     <Compile Include="Assets\PickUpAble.cs" />
-     <Compile Include="Assets\PickUpSecret.cs" />
      <Compile Include="Assets\Scripts\CameraColission.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Catapult.cs" />
      <Compile Include="Assets\Scripts\Catapult_Button.cs" />
      <Compile Include="Assets\Scripts\Chest.cs" />
      <Compile Include="Assets\Scripts\Door.cs" />
+     <Compile Include="Assets\Scripts\HoldingButton.cs" />
      <Compile Include="Assets\Scripts\KeyPickup.cs" />
+     <Compile Include="Assets\Scripts\MovingPlatform.cs" />
+     <Compile Include="Assets\Scripts\Moving_Platform_Hold.cs" />
+     <Compile Include="Assets\Scripts\PickUpAble.cs" />
      <Compile Include="Assets\Scripts\PickUpScore.cs" />
+     <Compile Include="Assets\Scripts\PickUpSecret.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerScore.cs" />
      <Compile Include="Assets\Scripts\Teleporter.cs" />
@@ -79,6 +79,8 @@
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\Horizon With Sun Skybox.shader" />
      <None Include="Assets\Models\A_piece_of_nature\Readme.txt" />
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\Gradient Skybox.shader" />
+     <None Include="Assets\Models\ErbGameArt\Procedural fire\Shaders\FireSphere.shader" />
+     <None Include="Assets\Models\ErbGameArt\Procedural fire\Demo scene\Readme.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/luko&apos;/Desktop/Githubas/TheNextTale/The Next Tale/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

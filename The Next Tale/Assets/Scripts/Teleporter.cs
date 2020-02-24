@@ -10,6 +10,7 @@ public class Teleporter : MonoBehaviour
     public Text secret;
     public Text TimeTaken;
     private GameObject player;
+    public GameObject effect;
     public int Gems;
     public int Secrets;
 
@@ -39,7 +40,9 @@ public class Teleporter : MonoBehaviour
             gem.text = "GEMS FOUND: " + player.GetComponent<PlayerScore>().gems.ToString() + "/" + Gems.ToString();
             secret.text = "SECRETS FOUND: " + player.GetComponent<PlayerScore>().secrets.ToString() + "/" + Secrets.ToString();
             TimeTaken.text = "TIME: " + leveltimer.ToString() ;
-
+            Instantiate(effect, transform.position, transform.rotation);
         }
     }
+
+
 }

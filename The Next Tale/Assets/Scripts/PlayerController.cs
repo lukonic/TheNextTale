@@ -20,11 +20,13 @@ public class PlayerController : MonoBehaviour
     Rigidbody m_Rigidbody;
     public float jumpHeight = 2f;
     public LayerMask groundLayers;
+    public GameObject effect;
     public CapsuleCollider col;
     Vector3 m_Movement;
     public bool Carrying;
     void Start()
     {
+        Instantiate(effect, transform.position, transform.rotation);
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
