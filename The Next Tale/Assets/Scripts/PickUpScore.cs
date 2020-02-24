@@ -30,6 +30,7 @@ public class PickUpScore : MonoBehaviour
                 playerScore.currentScore++;
                 print("Veikia");
                 gameObject.SetActive(false);
+                playerScore.gems++;
             }
 
         }

@@ -57,6 +57,7 @@
   <ItemGroup>
      <Compile Include="Assets\MovingPlatform.cs" />
      <Compile Include="Assets\PickUpAble.cs" />
+     <Compile Include="Assets\PickUpSecret.cs" />
      <Compile Include="Assets\Scripts\CameraColission.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Catapult.cs" />

@@ -8,6 +8,8 @@ public class PlayerScore : MonoBehaviour
     //Set up a variable to store how many you've collected
     private int startScore = 0;
     public int currentScore;
+    public int gems;
+    public int secrets;
 
     private int startKeys = 0;
     public int currentKeys;
@@ -19,9 +21,9 @@ public class PlayerScore : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         currentKeys = startKeys;
-        counter.text = "Keys: 0";
         currentKeys = startKeys;
-        key.text = "Keys: 0";
+        gems = 0;
+        secrets = 0;
     }
 
 
