@@ -41450,6 +41450,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300002, guid: fed24bd82cefc0c4a8ef64dab6231b53,
         type: 3}
+    - target: {fileID: 4954255246764659148, guid: ddadde94274842e4fbf16fab5af8f156,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954255246764659148, guid: ddadde94274842e4fbf16fab5af8f156,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4954255246764659148, guid: ddadde94274842e4fbf16fab5af8f156,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 4966938763754109825, guid: ddadde94274842e4fbf16fab5af8f156,
         type: 3}
       propertyPath: m_Material
@@ -41551,6 +41566,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mage_b 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334199495461366143, guid: ddadde94274842e4fbf16fab5af8f156,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddadde94274842e4fbf16fab5af8f156, type: 3}

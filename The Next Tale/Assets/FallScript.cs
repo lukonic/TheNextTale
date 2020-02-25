@@ -15,7 +15,10 @@ public class FallScript : MonoBehaviour
     {
         if (other.gameObject == player)
         {
+            if (player.GetComponent<PlayerHealth>().currentHealth > 1)
+            {
                 player.GetComponent<PlayerController>().TeleportToLastSpawn();
+            }
                  player.GetComponent<PlayerHealth>().TakeDamage(1);
             player.GetComponent<PlayerHealth>().invincibility = true;
             StartCoroutine(ExecuteAfterTime(2));
