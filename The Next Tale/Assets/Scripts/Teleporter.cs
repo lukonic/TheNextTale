@@ -41,6 +41,22 @@ public class Teleporter : MonoBehaviour
             secret.text = "SECRETS FOUND: " + player.GetComponent<PlayerScore>().secrets.ToString() + "/" + Secrets.ToString();
             TimeTaken.text = "TIME: " + leveltimer.ToString() ;
             Instantiate(effect, transform.position, transform.rotation);
+
+                // Stop the camera movement
+                player.GetComponent<GameOverManager>().cameraMovement.enabled = false;
+                // Turn on the cursor back after dying
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                // Show the endgame buttons
+                player.GetComponent<Rigidbody>().isKinematic = true;
+                player.GetComponent<BoxCollider>().enabled = false;
+                CapsuleCollider[] myColliders = gameObject.GetComponents<CapsuleCollider>();
+                foreach (CapsuleCollider bc in myColliders) bc.enabled = false;
+                player.GetComponent<GameOverManager>().mesh.SetActive(false);
+                player.GetComponent<PlayerController>().enabled = false;
+                player.GetComponent<Animator>().enabled = false;
+           
         }
     }
 

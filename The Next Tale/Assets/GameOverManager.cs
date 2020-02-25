@@ -7,7 +7,7 @@ public class GameOverManager : MonoBehaviour
      GameObject player;
      GameObject ragdollas;
     public GameObject mesh;
-    CameraFollow cameraMovement;
+    public CameraFollow cameraMovement;
     bool dead;
 
 
