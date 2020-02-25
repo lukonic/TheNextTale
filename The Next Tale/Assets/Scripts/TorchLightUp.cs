@@ -7,9 +7,11 @@ public class TorchLightUp : MonoBehaviour
     // Start is called before the first frame update
     GameObject player;
     private ParticleSystem ps;
+    private bool lit;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        lit = false;
     }
 
     // Update is called once per frame
@@ -17,11 +19,16 @@ public class TorchLightUp : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            print("Veikia");
-            transform.GetChild(0).gameObject.SetActive(true);
-            ps = gameObject.GetComponent<ParticleSystem>();
-            var emission = ps.emission;
-            emission.enabled = true;
+            if (lit == false)
+            {
+                print("Veikia");
+                transform.GetChild(0).gameObject.SetActive(true);
+                ps = gameObject.GetComponent<ParticleSystem>();
+                var emission = ps.emission;
+                emission.enabled = true;
+                player.GetComponent<PlayerController>().GetLastSpawn();
+                lit = true;
+            }
         }
     }
 }

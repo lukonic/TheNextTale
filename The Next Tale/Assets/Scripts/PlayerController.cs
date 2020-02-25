@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     public CapsuleCollider col;
     Vector3 m_Movement;
     public bool Carrying;
+
+    Vector3 LastSpawn;
     void Start()
     {
         Instantiate(effect, transform.position, transform.rotation);
@@ -31,7 +33,17 @@ public class PlayerController : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
         GetComponent<BoxCollider>().enabled = false;
+        GetLastSpawn();
         // get the distance to ground
+    }
+    public void GetLastSpawn()
+    {
+        LastSpawn = this.transform.position;
+    }
+    public void TeleportToLastSpawn()
+    {
+        this.transform.position = LastSpawn;
+        Instantiate(effect, transform.position, transform.rotation);
     }
     void Update()
     {
