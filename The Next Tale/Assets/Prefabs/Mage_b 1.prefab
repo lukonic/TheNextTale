@@ -291,6 +291,7 @@ GameObject:
   - component: {fileID: 4966938763754109825}
   - component: {fileID: 4966938763754109827}
   - component: {fileID: 1669061669434788363}
+  - component: {fileID: -5643468712495757858}
   m_Layer: 8
   m_Name: Mage_b 1
   m_TagString: Player
@@ -382,6 +383,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 1
+  effect: {fileID: 0}
   col: {fileID: 5349649596991727060}
   Carrying: 0
 --- !u!136 &4966938763754109825
@@ -429,6 +431,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.5922335, y: 1.5037203, z: 1.6068941}
   m_Center: {x: -0.002174857, y: 1.8611096, z: 1.0190978}
+--- !u!114 &-5643468712495757858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8334199495461366019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6e13cd19d496a45ac8d730c412ada6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8334199495461366021
 GameObject:
   m_ObjectHideFlags: 0
