@@ -22,8 +22,6 @@ public class Catapult_Button : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player && (player.GetComponent<Rigidbody>().velocity.y < -0.5))
-        {
             if (cooldown == false)
             {
                 catapult.GetComponent<Catapult>().IsON = true;
@@ -32,8 +30,6 @@ public class Catapult_Button : MonoBehaviour
                 rend.sharedMaterial = material[1];
                 StartCoroutine(ExecuteAfterTime(2f));
             }
-
-        }
     }
     IEnumerator ExecuteAfterTime(float time)
     {
