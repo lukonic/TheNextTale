@@ -83,6 +83,7 @@
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\Horizontal Skybox.shader" />
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\Horizon With Sun Skybox.shader" />
      <None Include="Assets\Models\A_piece_of_nature\Readme.txt" />
+     <None Include="Assets\Models\FantasyEnvironments\Environments\README.txt" />
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\Gradient Skybox.shader" />
      <None Include="Assets\Models\Fire effect\Procedural fire\Shaders\FireSphere.shader" />
      <None Include="Assets\Models\Fire effect\Procedural fire\Demo scene\Readme.txt" />
