@@ -23,7 +23,7 @@ public class CameraFollow : MonoBehaviour
     public float smoothY;
     private float rotY = 0.0f;
     private float rotX = 0.0f;
-
+    public bool ON;
 
 
     // Use this for initialization
@@ -34,29 +34,31 @@ public class CameraFollow : MonoBehaviour
         rotX = rot.x;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        ON = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (ON)
+        {
+            // We setup the rotation of the sticks here
+            float inputX = Input.GetAxis("Mouse X");
+            float inputZ = Input.GetAxis("Mouse Y");
+            mouseX = Input.GetAxis("Mouse X");
+            mouseY = Input.GetAxis("Mouse Y");
+            finalInputX = inputX + mouseX;
+            finalInputZ = -(inputZ + mouseY);
 
-        // We setup the rotation of the sticks here
-        float inputX = Input.GetAxis("Mouse X");
-        float inputZ = Input.GetAxis("Mouse Y");
-        mouseX = Input.GetAxis("Mouse X");
-        mouseY = Input.GetAxis("Mouse Y");
-        finalInputX = inputX + mouseX;
-        finalInputZ = -(inputZ + mouseY);
+            rotY += finalInputX * inputSensitivity * Time.deltaTime;
+            rotX += finalInputZ * inputSensitivity * Time.deltaTime;
 
-        rotY += finalInputX * inputSensitivity * Time.deltaTime;
-        rotX += finalInputZ * inputSensitivity * Time.deltaTime;
+            rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
 
-        rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
+            Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
+            transform.rotation = localRotation;
 
-        Quaternion localRotation = Quaternion.Euler(rotX, rotY, 0.0f);
-        transform.rotation = localRotation;
-
-
+        }
     }
 
     void LateUpdate()
@@ -66,11 +68,12 @@ public class CameraFollow : MonoBehaviour
 
     void CameraUpdater()
     {
-        // set the target object to follow
-        Transform target = CameraFollowObj.transform;
 
-        //move towards the game object that is the target
-        float step = CameraMoveSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+            // set the target object to follow
+            Transform target = CameraFollowObj.transform;
+
+            //move towards the game object that is the target
+            float step = CameraMoveSpeed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
     }
 }

@@ -7,6 +7,7 @@ public class LevelSelect : MonoBehaviour
 {
     GameObject UI;
     GameObject player;
+    GameObject camera;
     public void LoadLevel(string levelName)
     {
         SceneManager.LoadScene(levelName);
@@ -16,6 +17,7 @@ public class LevelSelect : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         UI = GameObject.FindGameObjectWithTag("LevelSelectUI");
+        camera = GameObject.FindGameObjectWithTag("CameraFolder");
         UI.SetActive(false);
     }
 
@@ -23,6 +25,8 @@ public class LevelSelect : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        player.GetComponent<PlayerController>().ON = true;
+        camera.GetComponent<CameraFollow>().ON = true;
         UI.SetActive(false);
     }
     // Update is called once per frame
@@ -30,8 +34,10 @@ public class LevelSelect : MonoBehaviour
     {
         if (other.gameObject == player)
         {
+            player.GetComponent<PlayerController>().ON = false;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            camera.GetComponent<CameraFollow>().ON = false;
             UI.SetActive(true);
         }
     }

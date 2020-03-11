@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public CapsuleCollider col;
     Vector3 m_Movement;
     public bool Carrying;
-
+    public bool ON;
     Vector3 LastSpawn;
     void Start()
     {
@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
         col = GetComponent<CapsuleCollider>();
         GetComponent<BoxCollider>().enabled = false;
         GetLastSpawn();
+        ON = true;
         // get the distance to ground
     }
     public void GetLastSpawn()
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
         if (IsGrounded())
         {
             m_Animator.SetBool("IsJumping", false);
-            if (Input.GetButtonDown("Jump") && Carrying == false)
+            if (Input.GetButtonDown("Jump") && Carrying == false && ON == true)
             {
                 print("VEIKIA");
                 m_Rigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
@@ -69,9 +70,13 @@ public class PlayerController : MonoBehaviour
     }
     private void DirectUpdate()
     {
-        float v = Input.GetAxis("Vertical");
-        float h = Input.GetAxis("Horizontal");
-
+        float v = 0;
+        float h = 0;
+        if (ON)
+        {
+             v = Input.GetAxis("Vertical");
+             h = Input.GetAxis("Horizontal");
+        }
         Transform camera = Camera.main.transform;
         bool hasHorizontalInput = !Mathf.Approximately(v, 0f);
         bool hasVerticalInput = !Mathf.Approximately(h, 0f);
