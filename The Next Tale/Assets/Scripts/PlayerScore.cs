@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerScore : MonoBehaviour
 {
     //Set up a variable to store how many you've collected
-    private int startScore = 0;
     public int currentScore;
     public int gems;
     public int secrets;
@@ -30,7 +29,8 @@ public class PlayerScore : MonoBehaviour
 
     private void Update()
     {
-        counter.text = "Score: " + currentScore.ToString();
+
+        counter.text = "Gems Collected: " + currentScore.ToString();
         key.text = "Keys: " + currentKeys.ToString();
     }
 }

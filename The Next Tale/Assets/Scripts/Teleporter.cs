@@ -14,6 +14,7 @@ public class Teleporter : MonoBehaviour
     public int Gems;
     public int Secrets;
 
+    public string LevelName;
 
      float leveltimer;
      bool updateTimer;
@@ -38,15 +39,18 @@ public class Teleporter : MonoBehaviour
             updateTimer = false;
             levelcompleted.text = "LEVEL COMPLETED";
             gem.text = "GEMS FOUND: " + player.GetComponent<PlayerScore>().gems.ToString() + "/" + Gems.ToString();
-            secret.text = "SECRETS FOUND: " + player.GetComponent<PlayerScore>().secrets.ToString() + "/" + Secrets.ToString();
+            secret.text = "SECRETS FOUND: " + player.GetComponent<PlayerScore>().secrets.ToString() + "/" + (Secrets - PlayerPrefs.GetInt(LevelName, 0)).ToString();
             TimeTaken.text = "TIME: " + leveltimer.ToString() ;
             Instantiate(effect, transform.position, transform.rotation);
 
+            player.GetComponent<Saving>().Save();
+            player.GetComponent<GameOverManager>().cameraMovement.enabled = false;
+            player.SetActive(false);
+            /*
                 // Stop the camera movement
                 player.GetComponent<GameOverManager>().cameraMovement.enabled = false;
                 // Turn on the cursor back after dying
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+               
 
                 // Show the endgame buttons
                 player.GetComponent<Rigidbody>().isKinematic = true;
@@ -56,7 +60,11 @@ public class Teleporter : MonoBehaviour
                 player.GetComponent<GameOverManager>().mesh.SetActive(false);
                 player.GetComponent<PlayerController>().enabled = false;
                 player.GetComponent<Animator>().enabled = false;
-           
+                */
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            
+
         }
     }
 

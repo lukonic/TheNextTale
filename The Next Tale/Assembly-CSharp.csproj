@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\Door.cs" />
      <Compile Include="Assets\Scripts\HoldingButton.cs" />
      <Compile Include="Assets\Scripts\KeyPickup.cs" />
+     <Compile Include="Assets\Scripts\LevelInventory.cs" />
      <Compile Include="Assets\Scripts\MovingPlatform.cs" />
      <Compile Include="Assets\Scripts\Moving_Platform_Hold.cs" />
      <Compile Include="Assets\Scripts\PickUpAble.cs" />
