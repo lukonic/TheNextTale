@@ -60,6 +60,7 @@
      <Compile Include="Assets\GameOverManager.cs" />
      <Compile Include="Assets\LevelSelect.cs" />
      <Compile Include="Assets\PlayerHealth.cs" />
+     <Compile Include="Assets\Saving.cs" />
      <Compile Include="Assets\Scripts\CameraColission.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Catapult.cs" />

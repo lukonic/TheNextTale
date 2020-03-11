@@ -11,6 +11,9 @@ public class Chest : MonoBehaviour
     public int amount;
     Animator m_Animator;
     private bool open;
+    public bool L1S1;
+    public bool L2S1;
+    public bool L2S2;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -23,12 +26,9 @@ public class Chest : MonoBehaviour
     {
         if (other.gameObject == player && open == false)
         {
-            for (int i = 0; i < amount; i++)
-            {
+
                 Instantiate(spawn, transform.position + new Vector3(0, 0.5f), transform.rotation);
                 Instantiate(effect, transform.position + new Vector3(0, 1f), transform.rotation);
-            }
-            
             m_Animator.SetBool("Atidaryta", true);
             open = true;
         }

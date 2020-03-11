@@ -293,6 +293,8 @@ GameObject:
   - component: {fileID: 1669061669434788363}
   - component: {fileID: -5643468712495757858}
   - component: {fileID: 1489560330292820819}
+  - component: {fileID: 4948627210580720268}
+  - component: {fileID: 8139248419279095917}
   m_Layer: 8
   m_Name: Mage_b 1
   m_TagString: Player
@@ -388,6 +390,7 @@ MonoBehaviour:
   effect: {fileID: 0}
   col: {fileID: 5349649596991727060}
   Carrying: 0
+  ON: 0
 --- !u!136 &4966938763754109825
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -470,6 +473,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesh: {fileID: 8334199495461366143}
+  cameraMovement: {fileID: 0}
+--- !u!114 &4948627210580720268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8334199495461366019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc3baab5c847cfb4c988094fcb2b0ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  L1S1: 0
+--- !u!114 &8139248419279095917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8334199495461366019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1e7be8e3e7c0364e8bc37e61158d241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8334199495461366021
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,6 +34,7 @@ public class LevelSelect : MonoBehaviour
     {
         if (other.gameObject == player)
         {
+            player.GetComponent<Saving>().Save();
             player.GetComponent<PlayerController>().ON = false;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

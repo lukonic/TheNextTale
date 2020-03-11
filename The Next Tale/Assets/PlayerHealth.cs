@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int startingHealth = 5;
+    public int startingHealth;
     public int currentHealth;
     public static int health; //Needed for saving state
     public int numberOfHearts;
@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = startingHealth;
+        this.GetComponent<Saving>().Load();
         numberOfHearts = startingHealth;
         health = startingHealth;
         invincibility = false;
