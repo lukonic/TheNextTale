@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\TorchLightUp.cs" />
      <Compile Include="Assets\Scripts\VaseDestroy.cs" />
      <Compile Include="Assets\Sun.cs" />
+     <Compile Include="Assets\box.cs" />
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\RGBM Cubed Skybox.shader" />
      <None Include="Assets\Models\Crates and Barrels\Readme.txt" />
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\Horizontal Skybox.shader" />
