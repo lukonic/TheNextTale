@@ -292,6 +292,7 @@
 Assets\FallScript.cs
 Assets\Fan.cs
 Assets\GameOverManager.cs
+Assets\LevelSelect.cs
 Assets\PlayerHealth.cs
 Assets\Scripts\CameraColission.cs
 Assets\Scripts\CameraFollow.cs
@@ -312,4 +313,3 @@ Assets\Scripts\Teleporter.cs
 Assets\Scripts\TorchLightUp.cs
 Assets\Scripts\VaseDestroy.cs
 Assets\Sun.cs
-Assets\box.cs

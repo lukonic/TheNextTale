@@ -58,6 +58,7 @@
      <Compile Include="Assets\FallScript.cs" />
      <Compile Include="Assets\Fan.cs" />
      <Compile Include="Assets\GameOverManager.cs" />
+     <Compile Include="Assets\LevelSelect.cs" />
      <Compile Include="Assets\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\CameraColission.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
@@ -78,7 +79,6 @@
      <Compile Include="Assets\Scripts\TorchLightUp.cs" />
      <Compile Include="Assets\Scripts\VaseDestroy.cs" />
      <Compile Include="Assets\Sun.cs" />
-     <Compile Include="Assets\box.cs" />
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\RGBM Cubed Skybox.shader" />
      <None Include="Assets\Models\Crates and Barrels\Readme.txt" />
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\Horizontal Skybox.shader" />
