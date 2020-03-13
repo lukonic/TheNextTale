@@ -30,7 +30,7 @@ public class PlayerScore : MonoBehaviour
     private void Update()
     {
 
-        counter.text = "Gems Collected: " + currentScore.ToString();
+        counter.text = "Score: " + currentScore.ToString();
         key.text = "Keys: " + currentKeys.ToString();
     }
 }

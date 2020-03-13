@@ -12,6 +12,7 @@ TagManager:
   - PlayerRagdoll
   - BaseMesh
   - LevelSelectUI
+  - ContinueButton
   layers:
   - Default
   - TransparentFX

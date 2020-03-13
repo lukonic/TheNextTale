@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class Teleporter : MonoBehaviour
 {
     public Text levelcompleted;
@@ -18,12 +18,16 @@ public class Teleporter : MonoBehaviour
 
      float leveltimer;
      bool updateTimer;
+
+    GameObject UI;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        UI = GameObject.FindGameObjectWithTag("ContinueButton");
         updateTimer = true;
         leveltimer = 0.0f;
+        UI.SetActive(false);
     }
 
     void Update()
@@ -63,9 +67,14 @@ public class Teleporter : MonoBehaviour
                 */
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            
+            UI.SetActive(true);
+
 
         }
+    }
+    public void LoadLevel(string levelName)
+    {
+        SceneManager.LoadScene(levelName);
     }
 
 

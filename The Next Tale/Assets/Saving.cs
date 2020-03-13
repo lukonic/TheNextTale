@@ -7,7 +7,7 @@ public class Saving : MonoBehaviour
 {
     GameObject player;
     GameObject teleporter;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +30,13 @@ public class Saving : MonoBehaviour
             PlayerPrefs.SetInt(player.GetComponent<LevelInventory>().SecretArray[i], 1);
         }
         //secrets amount
-        PlayerPrefs.SetInt(teleporter.GetComponent<Teleporter>().LevelName, PlayerPrefs.GetInt(teleporter.GetComponent<Teleporter>().LevelName, 0) + player.GetComponent<LevelInventory>().counter);
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName != "MainHub")
+        {
+            print("AGEWJGIWEWG");
+            PlayerPrefs.SetInt(teleporter.GetComponent<Teleporter>().LevelName, PlayerPrefs.GetInt(teleporter.GetComponent<Teleporter>().LevelName, 0) + player.GetComponent<LevelInventory>().counter);
+        }
     }
     public void Load()
     {
