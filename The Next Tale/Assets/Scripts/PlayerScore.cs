@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerScore : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerScore : MonoBehaviour
     public int currentScore;
     public int gems;
     public int secrets;
+    public int exp;
 
     private int startKeys = 0;
     public int currentKeys;
@@ -32,5 +34,11 @@ public class PlayerScore : MonoBehaviour
 
         counter.text = "Score: " + currentScore.ToString();
         key.text = "Keys: " + currentKeys.ToString();
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "MainHub")
+        {
+            key.text = "Experience: " + exp.ToString();
+        }
     }
 }

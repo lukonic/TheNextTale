@@ -55,12 +55,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AchievementVariable.cs" />
      <Compile Include="Assets\FallScript.cs" />
      <Compile Include="Assets\Fan.cs" />
      <Compile Include="Assets\GameOverManager.cs" />
      <Compile Include="Assets\LevelSelect.cs" />
      <Compile Include="Assets\PlayerHealth.cs" />
      <Compile Include="Assets\Saving.cs" />
+     <Compile Include="Assets\Scripts\AchievementCategoryButton.cs" />
      <Compile Include="Assets\Scripts\AchievementManager.cs" />
      <Compile Include="Assets\Scripts\CameraColission.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />

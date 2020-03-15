@@ -13,6 +13,7 @@ TagManager:
   - BaseMesh
   - LevelSelectUI
   - ContinueButton
+  - AchievementList
   layers:
   - Default
   - TransparentFX

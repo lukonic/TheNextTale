@@ -24,6 +24,9 @@ public class Saving : MonoBehaviour
         //gems
         PlayerPrefs.SetInt("Gems", player.GetComponent<PlayerScore>().gems + PlayerPrefs.GetInt("Gems", 0));
 
+        //gems
+        PlayerPrefs.SetInt("Exp", player.GetComponent<PlayerScore>().exp + PlayerPrefs.GetInt("Exp", 0));
+
         //secrets
         for (int i = 0; i < player.GetComponent<LevelInventory>().counter; i++)
         {
@@ -49,6 +52,7 @@ public class Saving : MonoBehaviour
         if (sceneName == "MainHub")
         {
             player.GetComponent<PlayerScore>().currentScore = PlayerPrefs.GetInt("Gems", 0);
+            player.GetComponent<PlayerScore>().exp = PlayerPrefs.GetInt("Exp", 0);
         }
 
 
