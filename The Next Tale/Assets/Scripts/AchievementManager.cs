@@ -19,10 +19,14 @@ public class AchievementManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         camera = GameObject.FindGameObjectWithTag("CameraFolder");
         activeButton = GameObject.Find("Level1Button").GetComponent<AchievementCategoryButton>();
-        CreateAchievement("Level1", "Complete the level", "Reach the end teleporter on Level 1", 5);
-        CreateAchievement("Level1", "Complete", "This is description", 10);
-        CreateAchievement("Level1", "Complete", "This is description", 10);
-        CreateAchievement("Level1", "Complete", "This is description", 10);
+        CreateAchievement("Level1", "From E to the Z", "Reach the end teleporter", 5);
+        CreateAchievement("Level1", "Darkness away!", "Light up all 7 torches", 2);
+        CreateAchievement("Level1", "Whoops", "Break open a barrel without jumping on it", 2);
+        CreateAchievement("Level1", "Toss it in the treasury", "Find all 7 green gems", 2);
+        CreateAchievement("Level1", "What's this?", "Find a secret in the level", 5);
+        CreateAchievement("Level1", "Fear of flying", "Complete the level by jumping 5 or less times", 5);
+        CreateAchievement("Level1", "Two party system", "Retrieve the key in under 10 seconds", 5);
+        CreateAchievement("Level1", "AAAAAHHHHH", "Complete the level in under 25 seconds", 10);
 
         CreateAchievement("Level2", "Complete", "This is description", 10);
         foreach (GameObject achievementlist in GameObject.FindGameObjectsWithTag("AchievementList"))
@@ -71,6 +75,14 @@ public class AchievementManager : MonoBehaviour
             Cursor.visible = true;
             camera.GetComponent<CameraFollow>().ON = false;
         }
+    }
+    public void TurnOff()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        player.GetComponent<PlayerController>().ON = true;
+        camera.GetComponent<CameraFollow>().ON = true;
+        canvas.SetActive(false);
     }
 
 }

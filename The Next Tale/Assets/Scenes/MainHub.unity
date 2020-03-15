@@ -16777,6 +16777,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1530978119361648, guid: dbbdea10d9741a147b25b3d4dbcb2b7b, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4023107102798996, guid: dbbdea10d9741a147b25b3d4dbcb2b7b, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
@@ -21258,6 +21262,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 475493048225686022, guid: a4faa8e02e97382408b39fe2db674aaf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 996405778}
+    - target: {fileID: 475493048225686022, guid: a4faa8e02e97382408b39fe2db674aaf,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnOff
+      objectReference: {fileID: 0}
     - target: {fileID: 671714866407472529, guid: a4faa8e02e97382408b39fe2db674aaf,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -21431,6 +21445,11 @@ PrefabInstance:
     - target: {fileID: 5087042100245197707, guid: a4faa8e02e97382408b39fe2db674aaf,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5308490925753635930, guid: a4faa8e02e97382408b39fe2db674aaf,
+        type: 3}
+      propertyPath: m_IgnoreLayout
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7777321586197911305, guid: a4faa8e02e97382408b39fe2db674aaf,

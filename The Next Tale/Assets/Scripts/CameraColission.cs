@@ -11,8 +11,12 @@ public class CameraColission : MonoBehaviour
     Vector3 dollyDir;
     public Vector3 dollyDirAdjusted;
     public float distance;
-
+    public GameObject camera;
     // Use this for initialization
+    void Start()
+    {
+        camera = GameObject.FindGameObjectWithTag("CameraFolder");
+    }
     void Awake()
     {
         dollyDir = transform.localPosition.normalized;
@@ -22,14 +26,17 @@ public class CameraColission : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var d = Input.GetAxis("Mouse ScrollWheel");
-        if (d > 0 && maxDistance > 1.0f)
+        if (camera.GetComponent<CameraFollow>().ON)
         {
-            maxDistance = maxDistance - 1.0f;
-        }
-        if (d < 0 && maxDistance < 4.0f)
-        {
-            maxDistance = maxDistance + 1.0f;
+            var d = Input.GetAxis("Mouse ScrollWheel");
+            if (d > 0 && maxDistance > 1.0f)
+            {
+                maxDistance = maxDistance - 1.0f;
+            }
+            if (d < 0 && maxDistance < 4.0f)
+            {
+                maxDistance = maxDistance + 1.0f;
+            }
         }
         Vector3 desiredCameraPos = transform.parent.TransformPoint(dollyDir * maxDistance);
         RaycastHit hit;
