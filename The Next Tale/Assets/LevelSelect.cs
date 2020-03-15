@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelSelect : MonoBehaviour
 {
     GameObject UI;
+    Button level2;
     GameObject player;
     GameObject camera;
     public void LoadLevel(string levelName)
@@ -14,7 +16,8 @@ public class LevelSelect : MonoBehaviour
     }
     // Start is called before the first frame update
     void Start()
-    {
+    { 
+        level2 = GameObject.Find("Level2_Select").GetComponent<Button>();
         player = GameObject.FindGameObjectWithTag("Player");
         UI = GameObject.FindGameObjectWithTag("LevelSelectUI");
         camera = GameObject.FindGameObjectWithTag("CameraFolder");
@@ -40,6 +43,12 @@ public class LevelSelect : MonoBehaviour
             Cursor.visible = true;
             camera.GetComponent<CameraFollow>().ON = false;
             UI.SetActive(true);
+
+            //levelių atrakinimas
+            if(player.GetComponent<PlayerScore>().exp < 20)
+            {
+                level2.interactable = false;
+            }
         }
     }
 }

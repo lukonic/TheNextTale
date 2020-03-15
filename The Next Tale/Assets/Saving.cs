@@ -41,7 +41,12 @@ public class Saving : MonoBehaviour
             PlayerPrefs.SetInt(teleporter.GetComponent<Teleporter>().LevelName, PlayerPrefs.GetInt(teleporter.GetComponent<Teleporter>().LevelName, 0) + player.GetComponent<LevelInventory>().counter);
         }
     }
-    public void Load()
+    public void SaveLevel1()
+    {
+        PlayerPrefs.SetInt("Level1_Complete", 1);
+
+    }
+        public void Load()
     {
         //hp
         player.GetComponent<PlayerHealth>().currentHealth = PlayerPrefs.GetInt("CurrentHealth", 5);

@@ -69,6 +69,7 @@ public class Teleporter : MonoBehaviour
             Cursor.visible = true;
             UI.SetActive(true);
 
+            player.GetComponent<Saving>().SaveLevel1();
 
         }
     }

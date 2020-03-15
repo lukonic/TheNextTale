@@ -7,6 +7,7 @@ public class LevelInventory : MonoBehaviour
     // Start is called before the first frame update
     [HideInInspector]public string[] SecretArray;
     [HideInInspector]public int counter;
+    public int TorchesLit;
     void Start()
     {
         counter = 0;

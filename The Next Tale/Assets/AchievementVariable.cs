@@ -12,14 +12,10 @@ public class AchievementVariable : MonoBehaviour
     {
         DoneImage = GameObject.Find("Image_Done");
         DoneImage.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Done)
+        
+        if(1 == PlayerPrefs.GetInt(AchievementName, 0))
         {
-
+            DoneImage.SetActive(true);
         }
     }
 }

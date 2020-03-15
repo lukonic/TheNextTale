@@ -27,6 +27,7 @@ public class TorchLightUp : MonoBehaviour
                 var emission = ps.emission;
                 emission.enabled = true;
                 player.GetComponent<PlayerController>().GetLastSpawn();
+                player.GetComponent<LevelInventory>().TorchesLit++;
                 lit = true;
             }
         }
