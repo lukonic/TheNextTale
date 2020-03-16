@@ -31,6 +31,7 @@ public class PickUpSecret : MonoBehaviour
                 print("Veikia");
                 gameObject.SetActive(false);
                 playerScore.secrets++;
+                player.GetComponent<LevelInventory>().secrets++;
             }
 
         }

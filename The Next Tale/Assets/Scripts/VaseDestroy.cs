@@ -38,6 +38,7 @@ public class VaseDestroy : MonoBehaviour
             Instantiate(spawn, transform.position + new Vector3(0, 0.5f), transform.rotation);
             print("Veikia");
             gameObject.SetActive(false);
+            player.GetComponent<LevelInventory>().BarrelWithoutJump++;
         }
     }
 }

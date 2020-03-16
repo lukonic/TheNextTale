@@ -6,6 +6,7 @@ public class KeyPickup : MonoBehaviour
 {
     GameObject player;
     PlayerScore playerScore;
+    GameObject teleporter;
     public GameObject effect;
     public float degreesPerSecond = 15.0f;
     public float amplitude = 0.1f;
@@ -20,6 +21,7 @@ public class KeyPickup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        teleporter = GameObject.Find("Teleporter");
         player = GameObject.FindGameObjectWithTag("Player");
         playerScore = player.GetComponent<PlayerScore>();
         posOffset = transform.position;
@@ -33,7 +35,10 @@ public class KeyPickup : MonoBehaviour
             playerScore.currentKeys++;
             print("Veikia");
             gameObject.SetActive(false);
-
+            if(teleporter.GetComponent<Teleporter>().leveltimer < 10)
+            {
+                player.GetComponent<LevelInventory>().KeyInTime = 1;
+            }
         }
     }
     void Update()

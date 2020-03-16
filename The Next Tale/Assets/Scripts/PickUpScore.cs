@@ -31,6 +31,7 @@ public class PickUpScore : MonoBehaviour
                 print("Veikia");
                 gameObject.SetActive(false);
                 playerScore.gems++;
+                player.GetComponent<LevelInventory>().Gems++;
             }
 
         }

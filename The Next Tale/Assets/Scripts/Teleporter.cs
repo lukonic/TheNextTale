@@ -16,7 +16,7 @@ public class Teleporter : MonoBehaviour
 
     public string LevelName;
 
-     float leveltimer;
+    public float leveltimer;
      bool updateTimer;
 
     GameObject UI;
@@ -40,6 +40,7 @@ public class Teleporter : MonoBehaviour
     {
         if (other.gameObject == player)
         {
+
             updateTimer = false;
             levelcompleted.text = "LEVEL COMPLETED";
             gem.text = "GEMS FOUND: " + player.GetComponent<PlayerScore>().gems.ToString() + "/" + Gems.ToString();
@@ -69,7 +70,9 @@ public class Teleporter : MonoBehaviour
             Cursor.visible = true;
             UI.SetActive(true);
 
+            player.GetComponent<LevelInventory>().Level1Time = leveltimer;
             player.GetComponent<Saving>().SaveLevel1();
+            
 
         }
     }

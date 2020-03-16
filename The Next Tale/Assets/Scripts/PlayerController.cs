@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    GameObject player;
     public float m_moveSpeed = 2;
 
     private float m_currentV = 0;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
     Vector3 LastSpawn;
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         Instantiate(effect, transform.position, transform.rotation);
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
@@ -55,6 +57,7 @@ public class PlayerController : MonoBehaviour
             {
                 print("VEIKIA");
                 m_Rigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+                player.GetComponent<LevelInventory>().jumps++;
             }
         }
         else
