@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 m_currentDirection = Vector3.zero;
     private Vector3 direction;
 
-
+    private bool CanHop;
     Animator m_Animator;
     Rigidbody m_Rigidbody;
     public float jumpHeight = 2f;
@@ -55,9 +55,27 @@ public class PlayerController : MonoBehaviour
             m_Animator.SetBool("IsJumping", false);
             if (Input.GetButtonDown("Jump") && Carrying == false && ON == true)
             {
-                print("VEIKIA");
-                m_Rigidbody.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-                player.GetComponent<LevelInventory>().jumps++;
+                
+                if (Input.GetButton("LeftShift"))
+                {
+                    print("HOP");
+                    player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                    player.GetComponent<Rigidbody>().Sleep();
+                    m_Rigidbody.AddForce((m_currentDirection / 2 + Vector3.up/1.25f) * jumpHeight, ForceMode.Impulse);
+                    player.GetComponent<LevelInventory>().jumps++;
+
+                }
+
+                else
+                {
+                    print("JUMP");
+                    player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                    player.GetComponent<Rigidbody>().Sleep();
+                    m_Rigidbody.AddForce((Vector3.up) * jumpHeight, ForceMode.Impulse);
+                    player.GetComponent<LevelInventory>().jumps++;
+                }
             }
         }
         else
@@ -69,7 +87,8 @@ public class PlayerController : MonoBehaviour
     }
     private bool IsGrounded()
     {
-        return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z), col.radius * 1f, groundLayers);
+        CanHop = false;
+        return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z), col.radius * 0.75f, groundLayers);
     }
     private void DirectUpdate()
     {
