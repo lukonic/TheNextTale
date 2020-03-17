@@ -14,6 +14,7 @@ public class AchievementManager : MonoBehaviour
     private AchievementCategoryButton activeButton;
     public ScrollRect scrollRect;
     private bool first;
+    private bool InTrigger;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -37,7 +38,27 @@ public class AchievementManager : MonoBehaviour
         activeButton.Click();
         canvas.SetActive(false);
     }
+    void Update()
+    {
+        if (InTrigger)
+        {
+            Vector3 targetDir = player.transform.position - transform.position;
+            targetDir.y = 0;
+            float step = 2 * Time.deltaTime;
 
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
+            Debug.DrawRay(transform.position, newDir, Color.red);
+
+            transform.rotation = Quaternion.LookRotation(newDir);
+
+            Vector3 targetDir2 = this.transform.position - player.transform.position;
+            targetDir2.y = 0;
+            float step2 = 2 * Time.deltaTime;
+
+            Vector3 newDir2 = Vector3.RotateTowards(player.transform.forward, targetDir2, step2, 0.0F);
+            Debug.DrawRay(player.transform.position, newDir2, Color.red);
+        }
+    }
     public void CreateAchievement(string category, string title, string description, int points, string name)
     {
         GameObject achievement = (GameObject)Instantiate(achievementPrefab);
@@ -79,6 +100,7 @@ public class AchievementManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             camera.GetComponent<CameraFollow>().ON = false;
+            InTrigger = true;
         }
     }
     public void TurnOff()
@@ -88,6 +110,7 @@ public class AchievementManager : MonoBehaviour
         player.GetComponent<PlayerController>().ON = true;
         camera.GetComponent<CameraFollow>().ON = true;
         canvas.SetActive(false);
+        InTrigger = false;
     }
 
 }
