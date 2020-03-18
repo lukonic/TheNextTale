@@ -24,6 +24,8 @@ public class CameraFollow : MonoBehaviour
     private float rotY = 0.0f;
     private float rotX = 0.0f;
     public bool ON;
+    private Vector3 velocity = Vector3.zero;
+    public float smoothTime = 0.2F;
 
 
     // Use this for initialization
@@ -74,6 +76,6 @@ public class CameraFollow : MonoBehaviour
 
             //move towards the game object that is the target
             float step = CameraMoveSpeed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+            transform.position = Vector3.SmoothDamp(transform.position, target.position, ref velocity, smoothTime);
     }
 }
