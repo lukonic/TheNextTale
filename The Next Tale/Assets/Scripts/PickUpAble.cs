@@ -56,6 +56,7 @@ public class PickUpAble : MonoBehaviour
         item.GetComponent<Rigidbody>().useGravity = true;
         item.GetComponent<Collider>().enabled = true;
         item.GetComponent<Rigidbody>().freezeRotation = false;
+        item.GetComponent<Rigidbody>().Sleep();
         item.transform.parent = null;
         item.layer = 0;
         item.transform.position = guide.transform.position;
