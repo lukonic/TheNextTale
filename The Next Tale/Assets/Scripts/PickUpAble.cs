@@ -48,7 +48,7 @@ public class PickUpAble : MonoBehaviour
     }
     void pickup()
     {
-        player.GetComponent<Rigidbody>().Sleep();
+        //player.GetComponent<Rigidbody>().Sleep();
         item.GetComponent<Rigidbody>().useGravity = false;
         item.GetComponent<Collider>().enabled = false;
         item.GetComponent<Rigidbody>().freezeRotation = true;
