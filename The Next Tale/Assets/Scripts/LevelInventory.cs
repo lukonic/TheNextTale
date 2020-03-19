@@ -13,6 +13,7 @@ public class LevelInventory : MonoBehaviour
     public int Gems;
     public int secrets;
     public int jumps;
+    public int NoKey;
     public int KeyInTime;
     public float Level1Time;
     void Start()

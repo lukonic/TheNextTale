@@ -72,6 +72,11 @@ public class Saving : MonoBehaviour
             ArDuotExp("Level1_Race_Key", 5);
             PlayerPrefs.SetInt("Level1_Race_Key", 1);
         }
+        if (player.GetComponent<LevelInventory>().NoKey == 1)
+        {
+            ArDuotExp("Level1_NoKey", 5);
+            PlayerPrefs.SetInt("Level1_NoKey", 1);
+        }
 
         print(player.GetComponent<LevelInventory>().Level1Time);
         if (player.GetComponent<LevelInventory>().Level1Time < 22)

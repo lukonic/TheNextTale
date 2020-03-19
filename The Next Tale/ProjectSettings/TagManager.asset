@@ -15,6 +15,7 @@ TagManager:
   - ContinueButton
   - AchievementList
   - Drop
+  - barrel
   layers:
   - Default
   - TransparentFX

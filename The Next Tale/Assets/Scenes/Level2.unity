@@ -5684,6 +5684,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel03 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 7100591986627456239, guid: 9cb913a47821b4d439328dc1dc986756,
+        type: 3}
+      propertyPath: tempParent
+      value: 
+      objectReference: {fileID: 7241987170144171549}
     - target: {fileID: 8392069678190018828, guid: 9cb913a47821b4d439328dc1dc986756,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6698,6 +6703,7 @@ MonoBehaviour:
   speed: 4
   delay_time: 2
   ON: 0
+  Freeze: 0
 --- !u!65 &267633032
 BoxCollider:
   m_ObjectHideFlags: 0

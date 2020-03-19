@@ -25,6 +25,7 @@ public class AchievementManager : MonoBehaviour
         CreateAchievement("Level1", "Whoops", "Break open a barrel without jumping on it", 2, "Level1_Barrel_Jump");
         CreateAchievement("Level1", "Toss it in the treasury", "Find all 7 green gems", 2, "Level1_Gems");
         CreateAchievement("Level1", "What's this?", "Find a secret in the level", 5, "Level1_Secret");
+        CreateAchievement("Level1", "OPEN UP", "Find a way to open the door without a key", 5, "Level1_NoKey");
         CreateAchievement("Level1", "Fear of flying", "Complete the level by jumping 4 or less times", 5, "Level1_Jumping");
         CreateAchievement("Level1", "Two party system", "Retrieve the key in under 10 seconds", 5, "Level1_Race_Key");
         CreateAchievement("Level1", "AAAAAHHHHH", "Complete the level in under 22 seconds", 10, "Level1_Race");

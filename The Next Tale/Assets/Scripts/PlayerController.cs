@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private readonly float m_interpolation = 10;
     private readonly float m_walkScale = 0.75f;
 
-    private Vector3 m_currentDirection = Vector3.zero;
+    public Vector3 m_currentDirection = Vector3.zero;
     private Vector3 direction;
 
     Animator m_Animator;
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
         DirectUpdate();
         
     }
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z), col.radius * 0.75f, groundLayers);
     }

@@ -8,13 +8,16 @@ public class PickUpAble : MonoBehaviour
     public GameObject player;
     public GameObject tempParent;
     public GameObject Drop;
-    public Transform guide;
+    public GameObject guide;
     bool carrying;
     public float range = 2;
     // Use this for initialization
     void Start()
     {
+        item = this.gameObject;
         player = GameObject.FindGameObjectWithTag("Player");
+        tempParent = GameObject.FindGameObjectWithTag("Player");
+        guide = GameObject.Find("Guide");
         item.GetComponent<Rigidbody>().useGravity = true;
         Drop = GameObject.FindGameObjectWithTag("Drop");
     }
@@ -40,12 +43,12 @@ public class PickUpAble : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 drop();
-
             }
         }
     }
     void pickup()
     {
+        player.GetComponent<Rigidbody>().Sleep();
         item.GetComponent<Rigidbody>().useGravity = false;
         item.GetComponent<Collider>().enabled = false;
         item.GetComponent<Rigidbody>().freezeRotation = true;
@@ -68,5 +71,18 @@ public class PickUpAble : MonoBehaviour
         player.GetComponent<BoxCollider>().enabled = false;
         Drop.GetComponent<Drop>().Paimta = null;
         Drop.SetActive(false);
+        if (item.tag == "barrel")
+        {
+            item.GetComponent<VaseDestroy>().TimeToDie = true;
+        }
+        if (Input.GetButton("LeftShift"))
+        {
+            if (item.tag == "barrel")
+            {
+                item.GetComponent<VaseDestroy>().TimeToDie = true;
+                item.GetComponent<VaseDestroy>().TimeToDieStrong = true;
+                item.GetComponent<Rigidbody>().AddForce((player.GetComponent<PlayerController>().m_currentDirection + item.transform.forward * 20 + new Vector3(0, 2, 0)), ForceMode.Impulse);
+            }
+        }
     }
 }

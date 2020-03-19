@@ -10,6 +10,8 @@ public class VaseDestroy : MonoBehaviour
     public GameObject effect;
     public GameObject spawn;
     public float boostup = 15;
+    public bool TimeToDie;
+    public bool TimeToDieStrong;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -17,7 +19,7 @@ public class VaseDestroy : MonoBehaviour
 
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
-    {
+    {    
         if (other.gameObject == player && (player.GetComponent<Rigidbody>().velocity.y < -2))
         {
             player.GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -31,14 +33,17 @@ public class VaseDestroy : MonoBehaviour
             gameObject.SetActive(false);
 
         }
-        if (GetComponent<Rigidbody>().velocity.y < -7 || GetComponent<Rigidbody>().velocity.y > 5)
+        if (other.gameObject != player)
         {
-            Instantiate(broken, transform.position, new Quaternion(180, 0, 0, 0));
-            Instantiate(effect, transform.position + new Vector3(0, 1), new Quaternion(0, 0, 0, 0));
-            Instantiate(spawn, transform.position + new Vector3(0, 0.5f), transform.rotation);
-            print("Veikia");
-            gameObject.SetActive(false);
-            player.GetComponent<LevelInventory>().BarrelWithoutJump++;
+            if (GetComponent<Rigidbody>().velocity.y < -7 || TimeToDie || other.GetComponent<VaseDestroy>().TimeToDieStrong)
+            {
+                Instantiate(broken, transform.position, new Quaternion(180, 0, 0, 0));
+                Instantiate(effect, transform.position + new Vector3(0, 1), new Quaternion(0, 0, 0, 0));
+                Instantiate(spawn, transform.position + new Vector3(0, 0.5f), transform.rotation);
+                print("Veikia");
+                gameObject.SetActive(false);
+                player.GetComponent<LevelInventory>().BarrelWithoutJump++;
+            }
         }
     }
 }

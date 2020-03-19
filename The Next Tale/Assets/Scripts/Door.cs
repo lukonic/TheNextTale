@@ -40,6 +40,16 @@ public class Door : MonoBehaviour
             }
 
         }
+        if(other.GetComponent<VaseDestroy>().TimeToDieStrong)
+        {
+            this.GetComponent<Rigidbody>().useGravity = true;
+            this.GetComponent<Rigidbody>().isKinematic = false;
+            this.GetComponent<BoxCollider>().material.staticFriction = 1;
+            this.GetComponent<BoxCollider>().material.dynamicFriction = 1;
+            this.GetComponent<Animator>().enabled = false;
+            Instantiate(effect, vyriai.transform.position, new Quaternion(90, 0, 0, 0));
+            player.GetComponent<LevelInventory>().NoKey = 1;
+        }
     }
     // Update is called once per frame
     IEnumerator ExecuteAfterTime(float time)
