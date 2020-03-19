@@ -36,8 +36,9 @@ public class HoldingButton : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        Holding = false;
         if (!Holding)
         {
             rend.sharedMaterial = material[0];

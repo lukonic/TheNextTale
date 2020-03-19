@@ -7,6 +7,7 @@ public class PickUpAble : MonoBehaviour
     public GameObject item;
     public GameObject player;
     public GameObject tempParent;
+    public GameObject Drop;
     public Transform guide;
     bool carrying;
     public float range = 2;
@@ -15,6 +16,7 @@ public class PickUpAble : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         item.GetComponent<Rigidbody>().useGravity = true;
+        Drop = GameObject.FindGameObjectWithTag("Drop");
     }
     // Update is called once per frame
     void Update()
@@ -27,6 +29,9 @@ public class PickUpAble : MonoBehaviour
                 carrying = true;
                 player.GetComponent<PlayerController>().Carrying = true;
                 player.GetComponent<BoxCollider>().enabled = true;
+                Drop.SetActive(true);
+                Drop.GetComponent<Drop>().Paimta = item;
+                
             }
         }
         else if (carrying == true && player.GetComponent<PlayerController>().Carrying == true)
@@ -35,9 +40,7 @@ public class PickUpAble : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 drop();
-                carrying = false;
-                player.GetComponent<PlayerController>().Carrying = false;
-                player.GetComponent<BoxCollider>().enabled = false;
+
             }
         }
     }
@@ -51,7 +54,7 @@ public class PickUpAble : MonoBehaviour
         item.transform.rotation = guide.transform.rotation;
         item.transform.parent = tempParent.transform;
     }
-    void drop()
+    public void drop()
     {
         item.GetComponent<Rigidbody>().useGravity = true;
         item.GetComponent<Collider>().enabled = true;
@@ -60,5 +63,10 @@ public class PickUpAble : MonoBehaviour
         item.transform.parent = null;
         item.layer = 0;
         item.transform.position = guide.transform.position;
+        carrying = false;
+        player.GetComponent<PlayerController>().Carrying = false;
+        player.GetComponent<BoxCollider>().enabled = false;
+        Drop.GetComponent<Drop>().Paimta = null;
+        Drop.SetActive(false);
     }
 }
