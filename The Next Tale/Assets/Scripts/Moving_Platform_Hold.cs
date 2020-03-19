@@ -15,6 +15,7 @@ public class Moving_Platform_Hold : MonoBehaviour
     private float delay_start;
 
     public bool ON;
+    public bool Freeze;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,7 @@ public class Moving_Platform_Hold : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!ON)
+        if (!ON && !Freeze)
         {
             current_target = points[0];
             if (transform.position != current_target)
@@ -66,7 +67,23 @@ public class Moving_Platform_Hold : MonoBehaviour
         }
         current_target = points[point_number];
     }
-
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Box" )
+        {
+            collision.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            Freeze = true;
+            print("Palietė");
+        }
+    }
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Box")
+        {
+            collision.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            Freeze = false;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         other.transform.parent = transform;
