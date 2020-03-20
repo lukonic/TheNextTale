@@ -56,6 +56,34 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Drop.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_BrushMirror.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_ComponentIndex.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_Culling.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_Direction.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_MeshChannel.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_MirrorCoordinateSpace.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_ModelSource.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_PaintMode.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_PlacementDirection.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_SelectionRenderState.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\MonoBehaviour\z_AdditionalVertexStreams.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\MonoBehaviour\z_OverlayRenderer.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\MonoBehaviour\z_ZoomOverride.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_AttributeLayout.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_ColorMask.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_CommonEdge.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_Edge.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_GradientSerializer.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_IHasDefault.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_IValid.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_Mesh.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_RndVec3.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_SplatSet.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Type\z_SplatWeight.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_Math.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_MeshUtility.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_Util.cs" />
+     <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_Vector.cs" />
      <Compile Include="Assets\Scripts\AchievementCategoryButton.cs" />
      <Compile Include="Assets\Scripts\AchievementManager.cs" />
      <Compile Include="Assets\Scripts\AchievementVariable.cs" />
@@ -86,15 +114,43 @@
      <Compile Include="Assets\Scripts\Teleporter.cs" />
      <Compile Include="Assets\Scripts\TorchLightUp.cs" />
      <Compile Include="Assets\Scripts\VaseDestroy.cs" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlender_SfSrc.shader" />
+     <None Include="Assets\ProCore\Polybrush\ThirdPartyLicenses.txt" />
+     <None Include="Assets\ProCore\Polybrush\Shader\Example\z_UnlitTextureBlendAndSnow.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendWithVertexColor_SfSrc.shader" />
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\RGBM Cubed Skybox.shader" />
      <None Include="Assets\Models\Crates and Barrels\Readme.txt" />
+     <None Include="Assets\ProCore\Polybrush\Shader\Noise.cginc" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendMobile.shader" />
+     <None Include="Assets\ProCore\Polybrush\Font\SIL Open Font License.txt" />
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\Horizontal Skybox.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendHeight.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_StandardVertexColor.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendModulate.shader" />
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\Horizon With Sun Skybox.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TriPlanarBlendLegacy_SfSrc.shader" />
      <None Include="Assets\Models\A_piece_of_nature\Readme.txt" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_BaseWithDecals.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_VertexBillboard.shader" />
      <None Include="Assets\Models\FantasyEnvironments\Environments\README.txt" />
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\Gradient Skybox.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\Example\z_UnlitTextureBlend.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendBmp_SfSrc.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_DiffuseVertexColor.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlender.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendHeight_SfSrc.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TriPlanarBlend.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_Overlay.shader" />
      <None Include="Assets\Models\Fire effect\Procedural fire\Shaders\FireSphere.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\Example\z_UnlitTextureBlend_WithMetaData.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TriPlanarBlend_SfSrc.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TriPlanarBlendLegacy.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendWithVertexColor.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendBmp.shader" />
+     <None Include="Assets\ProCore\Polybrush\README.txt" />
      <None Include="Assets\Models\Fire effect\Procedural fire\Demo scene\Readme.txt" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendMobile_SfSrc.shader" />
+     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendModulate_SfSrc.shader" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/luko&apos;/Desktop/Githubas/TheNextTale/The Next Tale/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
@@ -121,6 +177,18 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/luko&apos;/Desktop/Githubas/TheNextTale/The Next Tale/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder">
+ <HintPath>C:/Users/luko&apos;/Desktop/Githubas/TheNextTale/The Next Tale/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder.Editor">
+ <HintPath>C:/Users/luko&apos;/Desktop/Githubas/TheNextTale/The Next Tale/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+ <HintPath>C:/Users/luko&apos;/Desktop/Githubas/TheNextTale/The Next Tale/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder.AddOns.Editor">
+ <HintPath>C:/Users/luko&apos;/Desktop/Githubas/TheNextTale/The Next Tale/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
