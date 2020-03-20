@@ -16,6 +16,7 @@ TagManager:
   - AchievementList
   - Drop
   - barrel
+  - HealingCanvas
   layers:
   - Default
   - TransparentFX

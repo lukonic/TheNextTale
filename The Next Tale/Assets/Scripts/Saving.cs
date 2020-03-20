@@ -21,21 +21,27 @@ public class Saving : MonoBehaviour
         //hp
         PlayerPrefs.SetInt("CurrentHealth", player.GetComponent<PlayerHealth>().currentHealth);
 
-        //gems
-        PlayerPrefs.SetInt("Gems", player.GetComponent<PlayerScore>().gems + PlayerPrefs.GetInt("Gems", 0));
-
-        //secrets
-        for (int i = 0; i < player.GetComponent<LevelInventory>().counter; i++)
-        {
-            PlayerPrefs.SetInt(player.GetComponent<LevelInventory>().SecretArray[i], 1);
-        }
-        //secrets amount
+       
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         if (sceneName != "MainHub")
         {
+            //secrets
+            for (int i = 0; i < player.GetComponent<LevelInventory>().counter; i++)
+            {
+                PlayerPrefs.SetInt(player.GetComponent<LevelInventory>().SecretArray[i], 1);
+            }
+            //gems
+            PlayerPrefs.SetInt("Gems", player.GetComponent<PlayerScore>().gems + PlayerPrefs.GetInt("Gems", 0));
             print("AGEWJGIWEWG");
+            //secrets amount
             PlayerPrefs.SetInt(teleporter.GetComponent<Teleporter>().LevelName, PlayerPrefs.GetInt(teleporter.GetComponent<Teleporter>().LevelName, 0) + player.GetComponent<LevelInventory>().counter);
+        }
+        else
+        {
+
+            //gems
+            PlayerPrefs.SetInt("Gems", player.GetComponent<PlayerScore>().currentScore);
         }
     }
     public void SaveLevel1()

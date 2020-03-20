@@ -43,9 +43,9 @@ public class LevelSelect : MonoBehaviour
             Cursor.visible = true;
             camera.GetComponent<CameraFollow>().ON = false;
             UI.SetActive(true);
-
+            player.GetComponent<Saving>().Save();
             //levelių atrakinimas
-            if(player.GetComponent<PlayerScore>().exp < 20)
+            if (player.GetComponent<PlayerScore>().exp < 20)
             {
                 level2.interactable = false;
             }

@@ -49,6 +49,7 @@ public class Door : MonoBehaviour
             this.GetComponent<Animator>().enabled = false;
             Instantiate(effect, vyriai.transform.position, new Quaternion(90, 0, 0, 0));
             player.GetComponent<LevelInventory>().NoKey = 1;
+            islausta = true;
         }
     }
     // Update is called once per frame
