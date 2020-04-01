@@ -442,6 +442,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_moveSpeed: 6
+  tankas: 0
+  m_currentDirection: {x: 0, y: 0, z: 0}
   jumpHeight: 21
   groundLayers:
     serializedVersion: 2
@@ -565,6 +567,7 @@ MonoBehaviour:
   Gems: 0
   secrets: 0
   jumps: 0
+  NoKey: 0
   KeyInTime: 0
   Level1Time: 0
 --- !u!1 &8334199495461366021
