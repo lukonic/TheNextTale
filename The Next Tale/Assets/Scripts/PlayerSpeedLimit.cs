@@ -13,7 +13,7 @@ public class PlayerSpeedLimit : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if(other.gameObject == Player)
         {
@@ -27,6 +27,7 @@ public class PlayerSpeedLimit : MonoBehaviour
         if (other.gameObject == Player)
         {
             intrigger = false;
+            Player.GetComponent<PlayerController>().tankas = false;
         }
     }
 

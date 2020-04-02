@@ -125,6 +125,7 @@
     <Compile Include="Assets\Scripts\Teleporter.cs" />
     <Compile Include="Assets\Scripts\TorchLightUp.cs" />
     <Compile Include="Assets\Scripts\VaseDestroy.cs" />
+    <Compile Include="Assets\Trap.cs" />
     <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlender_SfSrc.shader" />
     <None Include="Assets\ProCore\Polybrush\ThirdPartyLicenses.txt" />
     <None Include="Assets\ProCore\Polybrush\Shader\Example\z_UnlitTextureBlendAndSnow.shader" />
