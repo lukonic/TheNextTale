@@ -129,3 +129,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mesh: {fileID: 0}
   cameraMovement: {fileID: 0}
+  blood: {fileID: 4473983811581709647, guid: 441ccd99f76b3c74792c4a97ee5bacfe, type: 3}
