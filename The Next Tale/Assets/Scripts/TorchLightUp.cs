@@ -8,6 +8,7 @@ public class TorchLightUp : MonoBehaviour
     GameObject player;
     private ParticleSystem ps;
     private bool lit;
+    AudioClip clipas;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -29,6 +30,8 @@ public class TorchLightUp : MonoBehaviour
                 player.GetComponent<PlayerController>().GetLastSpawn();
                 player.GetComponent<LevelInventory>().TorchesLit++;
                 lit = true;
+                clipas = GetComponent<AudioSource>().clip;
+                AudioSource.PlayClipAtPoint(clipas, transform.position);
             }
         }
     }
