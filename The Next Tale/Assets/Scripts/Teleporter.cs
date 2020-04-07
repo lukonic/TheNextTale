@@ -71,7 +71,10 @@ public class Teleporter : MonoBehaviour
             UI.SetActive(true);
 
             player.GetComponent<LevelInventory>().Level1Time = leveltimer;
-            player.GetComponent<Saving>().SaveLevel1();
+            if (LevelName == "L1")
+            {
+                player.GetComponent<Saving>().SaveLevel1();
+            }
             
 
         }

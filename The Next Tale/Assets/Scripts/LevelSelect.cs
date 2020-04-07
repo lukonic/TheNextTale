@@ -8,6 +8,7 @@ public class LevelSelect : MonoBehaviour
 {
     GameObject UI;
     Button level2;
+    Button level3;
     GameObject player;
     GameObject camera;
     public void LoadLevel(string levelName)
@@ -18,6 +19,7 @@ public class LevelSelect : MonoBehaviour
     void Start()
     { 
         level2 = GameObject.Find("Level2_Select").GetComponent<Button>();
+        level3 = GameObject.Find("Level3_Select").GetComponent<Button>();
         player = GameObject.FindGameObjectWithTag("Player");
         UI = GameObject.FindGameObjectWithTag("LevelSelectUI");
         camera = GameObject.FindGameObjectWithTag("CameraFolder");
@@ -47,7 +49,11 @@ public class LevelSelect : MonoBehaviour
             //levelių atrakinimas
             if (player.GetComponent<PlayerScore>().exp < 20)
             {
-                level2.interactable = false;
+                //level2.interactable = false;
+            }
+            if (player.GetComponent<PlayerScore>().exp < 40)
+            {
+                //level3.interactable = false;
             }
         }
     }
