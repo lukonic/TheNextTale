@@ -142,8 +142,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   broken: {fileID: 3560935260952882189, guid: f2e4c5d12a49ecc45bbaa744494d2fac, type: 3}
   effect: {fileID: 2418187259632976988, guid: 1443ebab3334325458970a6657990a60, type: 3}
+  effect_wood: {fileID: 9019500935338977511, guid: 9755c3d5e0a13714e9957f8b94d20f7f,
+    type: 3}
   spawn: {fileID: 1339432344603578163, guid: 50e627be3861a9044a66a1fcfe56a0ef, type: 3}
   boostup: 6
+  TimeToDie: 0
+  TimeToDieStrong: 0
 --- !u!54 &4980311957035303296
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class Door : MonoBehaviour
     private bool atidarom = false;
     Animator m_Animator;
     private bool islausta = false;
+    AudioClip clipas;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,8 @@ public class Door : MonoBehaviour
                 playerScore.currentKeys--;
                 atidarom = true;
                 islausta = true;
+                clipas = GetComponent<AudioSource>().clip;
+                AudioSource.PlayClipAtPoint(clipas, transform.position);
                 StartCoroutine(ExecuteAfterTime(2.0f));
             }
             else
@@ -40,8 +43,9 @@ public class Door : MonoBehaviour
             }
 
         }
-        if(other.GetComponent<VaseDestroy>().TimeToDieStrong)
+        if(other.GetComponent<VaseDestroy>().TimeToDieStrong && other.tag == "barrel")
         {
+            print("bam");
             this.GetComponent<Rigidbody>().useGravity = true;
             this.GetComponent<Rigidbody>().isKinematic = false;
             this.GetComponent<BoxCollider>().material.staticFriction = 1;

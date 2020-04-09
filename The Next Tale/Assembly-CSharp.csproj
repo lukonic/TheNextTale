@@ -57,6 +57,8 @@
   <ItemGroup>
      <Compile Include="Assets\Drop.cs" />
      <Compile Include="Assets\Healing.cs" />
+     <Compile Include="Assets\HealthPickup.cs" />
+     <Compile Include="Assets\Low Polygon Potions Pack\Other Assets\Scripts\CreatePrefabFromSelected.cs" />
      <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_BrushMirror.cs" />
      <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_ComponentIndex.cs" />
      <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_Culling.cs" />
@@ -130,6 +132,7 @@
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\Horizontal Skybox.shader" />
      <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendHeight.shader" />
      <None Include="Assets\ProCore\Polybrush\Shader\z_StandardVertexColor.shader" />
+     <None Include="Assets\Low Polygon Potions Pack\Readme.txt" />
      <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlendModulate.shader" />
      <None Include="Assets\Models\FSP\Platformer\Skybox Shaders\Horizon With Sun Skybox.shader" />
      <None Include="Assets\ProCore\Polybrush\Shader\z_TriPlanarBlendLegacy_SfSrc.shader" />

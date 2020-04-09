@@ -8,6 +8,7 @@ public class VaseDestroy : MonoBehaviour
     GameObject player;
     public GameObject broken;
     public GameObject effect;
+    public GameObject effect_wood;
     public GameObject spawn;
     public float boostup = 15;
     public bool TimeToDie;
@@ -28,6 +29,7 @@ public class VaseDestroy : MonoBehaviour
             player.GetComponent<Rigidbody>().AddForce(Vector3.up * boostup, ForceMode.VelocityChange);
             Instantiate(broken, transform.position, new Quaternion(180,0,0,0));
             Instantiate(effect, transform.position + new Vector3(0, 1), new Quaternion(0, 0, 0, 0));
+            Instantiate(effect_wood, transform.position + new Vector3(0, 1), new Quaternion(0, 0, 0, 0));
             Instantiate(spawn, transform.position+ new Vector3(0,0.5f), transform.rotation);
             print("Veikia");
             gameObject.SetActive(false);
@@ -40,6 +42,7 @@ public class VaseDestroy : MonoBehaviour
                 Instantiate(broken, transform.position, new Quaternion(180, 0, 0, 0));
                 Instantiate(effect, transform.position + new Vector3(0, 1), new Quaternion(0, 0, 0, 0));
                 Instantiate(spawn, transform.position + new Vector3(0, 0.5f), transform.rotation);
+                Instantiate(effect_wood, transform.position + new Vector3(0, 1), new Quaternion(0, 0, 0, 0));
                 print("Veikia");
                 gameObject.SetActive(false);
                 player.GetComponent<LevelInventory>().BarrelWithoutJump++;
