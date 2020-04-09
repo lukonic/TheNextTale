@@ -48,6 +48,7 @@ MonoBehaviour:
   mesh: {fileID: 0}
   cameraMovement: {fileID: 0}
   blood: {fileID: 6346861597863790204, guid: 233a2b07f0f75e340b2b07a5f3b6eaf0, type: 3}
+  dust: {fileID: 2929504433680545318, guid: cc7541dc62c9a184d9c30d1e76e67dbb, type: 3}
 --- !u!1 &1657087889312030192
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2467607998836343118}
   - component: {fileID: 2467607998837343118}
   - component: {fileID: 2467608000206866052}
-  - component: {fileID: 2467608000206866053}
   m_Layer: 0
   m_Name: Trap_Needle
   m_TagString: Untagged
@@ -95,21 +94,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300002, guid: a07105af0bc77a942ac71b139b8f4c4b, type: 3}
---- !u!114 &2467608000206866053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2467607998839545160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02cbd5ec7af545d43ac9d976ec2c6dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mesh: {fileID: 0}
-  cameraMovement: {fileID: 0}
-  blood: {fileID: 6346861597863790204, guid: 233a2b07f0f75e340b2b07a5f3b6eaf0, type: 3}
 --- !u!1 &2467607998839545164
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +223,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mesh: {fileID: 0}
   cameraMovement: {fileID: 0}
-  blood: {fileID: 0}
+  blood: {fileID: 6346861597863790204, guid: 233a2b07f0f75e340b2b07a5f3b6eaf0, type: 3}
+  dust: {fileID: 2929504433680545318, guid: cc7541dc62c9a184d9c30d1e76e67dbb, type: 3}
 --- !u!1 &2467607998839545166
 GameObject:
   m_ObjectHideFlags: 0

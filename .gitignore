@@ -1,3 +1,4 @@
 
 *.lock
 The Next Tale/Temp/UnityLockfile
+*.meta

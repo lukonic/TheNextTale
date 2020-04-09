@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3301363648167651504}
   - component: {fileID: 3301363647836084821}
-  - component: {fileID: 3301363647836084820}
   m_Layer: 0
   m_Name: Pf_HammerTrap
   m_TagString: Untagged
@@ -52,21 +51,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3301363647836084820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3301363648167810256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02cbd5ec7af545d43ac9d976ec2c6dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mesh: {fileID: 0}
-  cameraMovement: {fileID: 0}
-  blood: {fileID: 6346861597863790204, guid: 233a2b07f0f75e340b2b07a5f3b6eaf0, type: 3}
 --- !u!1 &3301363648167810258
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,6 +63,7 @@ GameObject:
   - component: {fileID: 3301363648166881490}
   - component: {fileID: 3301363648165357202}
   - component: {fileID: 3301363649196479817}
+  - component: {fileID: 8752155190687285965}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
@@ -161,7 +146,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mesh: {fileID: 0}
   cameraMovement: {fileID: 0}
-  blood: {fileID: 0}
+  blood: {fileID: 6346861597863790204, guid: 233a2b07f0f75e340b2b07a5f3b6eaf0, type: 3}
+  dust: {fileID: 2929504433680545318, guid: cc7541dc62c9a184d9c30d1e76e67dbb, type: 3}
+--- !u!64 &8752155190687285965
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3301363648167810258}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: d768d928a70b225449fbb445abf50afe, type: 3}
 --- !u!1 &3301363648167810266
 GameObject:
   m_ObjectHideFlags: 0

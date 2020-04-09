@@ -6,11 +6,13 @@ public class Trap : MonoBehaviour
 {
     GameObject player;
     GameObject ragdollas;
+    GameObject ragdolopozicija;
     public GameObject mesh;
     public CameraFollow cameraMovement;
     GameObject rag;
     public GameObject blood;
     GameObject kraujas;
+    public GameObject dust;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +35,7 @@ public class Trap : MonoBehaviour
                 cameraMovement.enabled = false;
                 rag = Instantiate(ragdollas, player.transform.position, player.transform.rotation ) ;
                 rag.SetActive(true);
-                kraujas = Instantiate(blood, rag.transform.position+ new Vector3(0,1,0), rag.transform.rotation);
+                kraujas = Instantiate(blood, rag.transform.GetChild(1).gameObject.transform.position + new Vector3(0,1,0), rag.transform.rotation);
                 kraujas.transform.parent = rag.transform;
                 // Turn on the cursor back after dying
 
@@ -54,7 +56,7 @@ public class Trap : MonoBehaviour
         yield return new WaitForSeconds(time);
         player.GetComponent<PlayerController>().TeleportToLastSpawn();
         cameraMovement.enabled = true;
-        ragdollas.transform.position = player.transform.position;
+        Instantiate(dust, rag.transform.GetChild(1).gameObject.transform.GetChild(0).transform.position, rag.transform.rotation);
         rag.SetActive(false);
         // Turn on the cursor back after dying
 
