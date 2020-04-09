@@ -9,6 +9,8 @@ public class Trap : MonoBehaviour
     public GameObject mesh;
     public CameraFollow cameraMovement;
     GameObject rag;
+    public GameObject blood;
+    GameObject kraujas;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,8 @@ public class Trap : MonoBehaviour
                 cameraMovement.enabled = false;
                 rag = Instantiate(ragdollas, player.transform.position, player.transform.rotation ) ;
                 rag.SetActive(true);
+                kraujas = Instantiate(blood, rag.transform.position+ new Vector3(0,1,0), rag.transform.rotation);
+                kraujas.transform.parent = rag.transform;
                 // Turn on the cursor back after dying
 
                 // Show the endgame buttons

@@ -66,6 +66,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mesh: {fileID: 0}
   cameraMovement: {fileID: 0}
+  blood: {fileID: 6346861597863790204, guid: 233a2b07f0f75e340b2b07a5f3b6eaf0, type: 3}
 --- !u!1 &3301363648167810258
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mesh: {fileID: 0}
   cameraMovement: {fileID: 0}
+  blood: {fileID: 0}
 --- !u!1 &3301363648167810266
 GameObject:
   m_ObjectHideFlags: 0
