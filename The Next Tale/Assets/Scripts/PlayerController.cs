@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     }
     public void TeleportToLastSpawn()
     {
-        this.transform.position = LastSpawn;
+        this.transform.position = LastSpawn+ new Vector3(0,1,0);
         Instantiate(effect, transform.position, transform.rotation);
     }
     void Update()
@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!tankas)
         {
+            m_Animator.SetBool("IsSliding", false);
             float v = 0;
             float h = 0;
             if (ON)
