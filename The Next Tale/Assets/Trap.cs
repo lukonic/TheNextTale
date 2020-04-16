@@ -33,7 +33,7 @@ public class Trap : MonoBehaviour
                 // Stop the camera movement
                 player.GetComponent<PlayerHealth>().invincibility = true;
                 cameraMovement.enabled = false;
-                rag = Instantiate(ragdollas, player.transform.position, player.transform.rotation ) ;
+                rag = Instantiate(Resources.Load("Ragdoll"), player.transform.position, player.transform.rotation ) as GameObject ;
                 rag.SetActive(true);
                 kraujas = Instantiate(blood, rag.transform.GetChild(1).gameObject.transform.position + new Vector3(0,1,0), rag.transform.rotation);
                 kraujas.transform.parent = rag.transform;
