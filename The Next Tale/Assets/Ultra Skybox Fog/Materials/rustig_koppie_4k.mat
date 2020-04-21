@@ -29,11 +29,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - <noninit>: 0
-    - _Exposure: 1
+    - _Exposure: 1.04
     - _FogBottom: 1
     - _FogEnd: 0.16
-    - _FogIntens: 0
-    - _FogStart: 0.16
+    - _FogIntens: 0.1
+    - _FogStart: 0.15
     - _MieIntens: 1.122
     - _MieSize: 0.359
     - _Rotation: 0
