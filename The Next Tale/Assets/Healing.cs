@@ -25,6 +25,8 @@ public class Healing : MonoBehaviour
         if (other.gameObject == player)
         {
             canvas.SetActive(true);
+            canvas.SetActive(false);
+            canvas.SetActive(true);
             CheckHP();
             player.GetComponent<PlayerController>().ON = false;
             Cursor.lockState = CursorLockMode.None;
