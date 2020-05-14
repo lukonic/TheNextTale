@@ -17,6 +17,7 @@ TagManager:
   - Drop
   - barrel
   - HealingCanvas
+  - DeadCanvas
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,7 @@ public class GameOverManager : MonoBehaviour
 {
      GameObject player;
      GameObject ragdollas;
+    GameObject Canvas;
     public GameObject mesh;
     public CameraFollow cameraMovement;
     bool dead;
@@ -23,7 +24,8 @@ public class GameOverManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         ragdollas = GameObject.FindGameObjectWithTag("PlayerRagdoll");
         ragdollas.SetActive(false);
-
+        Canvas = GameObject.FindGameObjectWithTag("DeadCanvas");
+        Canvas.SetActive(false);
     }
     private void Update()
     {
@@ -45,6 +47,7 @@ public class GameOverManager : MonoBehaviour
             player.GetComponent<PlayerController>().enabled = false;
             player.GetComponent<Animator>().enabled = false;
             dead = true;
+            Canvas.SetActive(true);
         }
     }
 }
