@@ -460,6 +460,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 135dee37a68e9734389c3f5209cc503c, type: 3}
   - {fileID: 8300000, guid: 769c23641350c864eadbe1b62a35e2c9, type: 3}
   - {fileID: 8300000, guid: 34e908a702be71f40bda57a00603a7df, type: 3}
+  jump: {fileID: 8300000, guid: a89040008813c874fbaa003b808963f9, type: 3}
+  hop: {fileID: 8300000, guid: 0ff2c822c055b7b4c81fad5c10ab4a9d, type: 3}
+  land: {fileID: 8300000, guid: e7880dff2f9c7cc4cb8a82c3fd26e74d, type: 3}
 --- !u!136 &4966938763754109825
 CapsuleCollider:
   m_ObjectHideFlags: 0

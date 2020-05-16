@@ -26,9 +26,16 @@ public class PlayerController : MonoBehaviour
     public bool Carrying;
     public bool ON;
     Vector3 LastSpawn;
+    bool landed;
 
     [SerializeField]
     private AudioClip[] stoneClips;
+    [SerializeField]
+    private AudioClip jump;
+    [SerializeField]
+    private AudioClip hop;
+    [SerializeField]
+    private AudioClip land;
 
     private AudioSource audioSource;
     void Start()
@@ -64,6 +71,11 @@ public class PlayerController : MonoBehaviour
     {
         if (IsGrounded())
         {
+            if (landed)
+            {
+                audioSource.PlayOneShot(land);
+                landed = false;
+            }
             m_Animator.SetBool("IsJumping", false);
             if (Input.GetButtonDown("Jump") && Carrying == false && ON == true && !tankas)
             {
@@ -71,6 +83,8 @@ public class PlayerController : MonoBehaviour
                 if (Input.GetButton("LeftShift"))
                 {
                     print("HOP");
+
+                    audioSource.PlayOneShot(hop);
                     player.GetComponent<Rigidbody>().velocity = Vector3.zero;
                     player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                     player.GetComponent<Rigidbody>().Sleep();
@@ -82,6 +96,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     print("JUMP");
+                    audioSource.PlayOneShot(jump);
                     player.GetComponent<Rigidbody>().velocity = Vector3.zero;
                     player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                     player.GetComponent<Rigidbody>().Sleep();
@@ -92,6 +107,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            landed = true;
             m_Animator.SetBool("IsJumping", true);
         }
         DirectUpdate();
