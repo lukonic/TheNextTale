@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
+
 public class Saving : MonoBehaviour
 {
     GameObject player;
     GameObject teleporter;
-    
+    bool Motionblur;
+    bool Bloom;
+    bool AutoExposure;
+    bool DepthOfField;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -118,6 +124,14 @@ public class Saving : MonoBehaviour
     }
     public void Delete()
     {
+        Motionblur = Convert.ToBoolean(PlayerPrefs.GetInt("MotionBlur", 1));
+        Bloom = Convert.ToBoolean(PlayerPrefs.GetInt("Bloom", 1));
+        AutoExposure = Convert.ToBoolean(PlayerPrefs.GetInt("AutoExposure", 1));
+        DepthOfField = Convert.ToBoolean(PlayerPrefs.GetInt("DepthOfField", 1));
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("MotionBlur", Convert.ToInt32(Motionblur));
+        PlayerPrefs.SetInt("Bloom", Convert.ToInt32(Bloom));
+        PlayerPrefs.SetInt("AutoExposure", Convert.ToInt32(AutoExposure));
+        PlayerPrefs.SetInt("DepthOfField", Convert.ToInt32(DepthOfField));
     }
 }

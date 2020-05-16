@@ -71,6 +71,8 @@
      <Compile Include="Assets\Healing.cs" />
      <Compile Include="Assets\HealthPickup.cs" />
      <Compile Include="Assets\Low Polygon Potions Pack\Other Assets\Scripts\CreatePrefabFromSelected.cs" />
+     <Compile Include="Assets\Options.cs" />
+     <Compile Include="Assets\PostProcessingOptions.cs" />
      <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_BrushMirror.cs" />
      <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_ComponentIndex.cs" />
      <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_Culling.cs" />
