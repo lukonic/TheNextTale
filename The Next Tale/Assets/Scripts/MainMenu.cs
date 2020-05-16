@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
 
     public void doContinue()
     {
-        SceneManager.LoadScene("MainHub");
+        //SceneManager.LoadScene("MainHub");
     }
 
     public void doAreYouSure()
@@ -52,11 +52,11 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("AutoExposure", Convert.ToInt32(AutoExposure));
         PlayerPrefs.SetInt("DepthOfField", Convert.ToInt32(DepthOfField));
         PlayerPrefs.SetFloat("Volume", volume);
-        SceneManager.LoadScene("MainHub");
+        //SceneManager.LoadScene("MainHub");
     }
     public void doMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        //SceneManager.LoadScene("MainMenu");
     }
     public void Cancel()
     {

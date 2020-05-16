@@ -70,6 +70,7 @@
      <Compile Include="Assets\Drop.cs" />
      <Compile Include="Assets\Healing.cs" />
      <Compile Include="Assets\HealthPickup.cs" />
+     <Compile Include="Assets\LoadingScreenControl.cs" />
      <Compile Include="Assets\Low Polygon Potions Pack\Other Assets\Scripts\CreatePrefabFromSelected.cs" />
      <Compile Include="Assets\Options.cs" />
      <Compile Include="Assets\PostProcessingOptions.cs" />
