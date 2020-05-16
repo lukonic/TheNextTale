@@ -41961,6 +41961,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: MainHub
       objectReference: {fileID: 0}
+    - target: {fileID: 6906998693309551691, guid: ab86cb19dd59d8a409fc928fc531bb0c,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 494dd7bbdee1aa54d9cd6750ea453fa0, type: 3}
+    - target: {fileID: 6906998693309551691, guid: ab86cb19dd59d8a409fc928fc531bb0c,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8927817047559633106, guid: ab86cb19dd59d8a409fc928fc531bb0c,
         type: 3}
       propertyPath: m_LocalPosition.x

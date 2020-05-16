@@ -69,7 +69,9 @@ public class Teleporter : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             UI.SetActive(true);
-
+            GameObject.Find("Canvas").GetComponent<AudioSource>().Stop();
+            GameObject.Find("Camera").GetComponent<AudioListener>().enabled = true;
+            this.GetComponent<AudioSource>().Play();
             player.GetComponent<LevelInventory>().Level1Time = leveltimer;
             if (LevelName == "L1")
             {

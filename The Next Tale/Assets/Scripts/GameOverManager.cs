@@ -48,6 +48,8 @@ public class GameOverManager : MonoBehaviour
             player.GetComponent<Animator>().enabled = false;
             dead = true;
             Canvas.SetActive(true);
+            GameObject.Find("Canvas").GetComponent<AudioSource>().Stop();
+            //GameObject.Find("Camera").GetComponent<AudioListener>().enabled = true;
         }
     }
 }

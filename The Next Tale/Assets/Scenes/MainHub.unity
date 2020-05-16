@@ -20268,6 +20268,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 6906998693309551691, guid: ab86cb19dd59d8a409fc928fc531bb0c,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e6b591a898529c49b9b10e3a208ff90, type: 3}
     - target: {fileID: 8927817047559633106, guid: ab86cb19dd59d8a409fc928fc531bb0c,
         type: 3}
       propertyPath: m_LocalPosition.x
