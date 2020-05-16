@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 1489560330292820819}
   - component: {fileID: 4948627210580720268}
   - component: {fileID: 7342074982402764401}
+  - component: {fileID: 696307030662105382}
   m_Layer: 2
   m_Name: Mage_b 1
   m_TagString: Player
@@ -570,6 +571,14 @@ MonoBehaviour:
   NoKey: 0
   KeyInTime: 0
   Level1Time: 0
+--- !u!81 &696307030662105382
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8334199495461366019}
+  m_Enabled: 1
 --- !u!1 &8334199495461366021
 GameObject:
   m_ObjectHideFlags: 0

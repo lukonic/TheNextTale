@@ -11,11 +11,13 @@ public class Options : MonoBehaviour
     bool AutoExposure;
     bool DepthOfField;
     bool on;
+    float volume;
 
     public GameObject Toggle_motion;
     public GameObject Toggle_bloom;
     public GameObject Toggle_auto;
     public GameObject Toggle_depth;
+    public GameObject Slider;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,16 +25,17 @@ public class Options : MonoBehaviour
         Bloom = Convert.ToBoolean(PlayerPrefs.GetInt("Bloom", 1));
         AutoExposure = Convert.ToBoolean(PlayerPrefs.GetInt("AutoExposure", 1));
         DepthOfField = Convert.ToBoolean(PlayerPrefs.GetInt("DepthOfField", 1));
+        volume = PlayerPrefs.GetFloat("Volume", 1);
+        AudioListener.volume = volume;
 
-        print(Motionblur);
-        print(Bloom);
-        print(AutoExposure);
-        print(DepthOfField);
+
+        print(volume);
         on = false;
         Toggle_motion.GetComponent<Toggle>().isOn = Motionblur;
         Toggle_bloom.GetComponent<Toggle>().isOn = Bloom;
         Toggle_auto.GetComponent<Toggle>().isOn = AutoExposure;
         Toggle_depth.GetComponent<Toggle>().isOn = DepthOfField;
+        Slider.GetComponent<Slider>().value = volume;
         on = true;
     }
 
@@ -43,12 +46,18 @@ public class Options : MonoBehaviour
         PlayerPrefs.SetInt("Bloom", Convert.ToInt32(Bloom));
         PlayerPrefs.SetInt("AutoExposure", Convert.ToInt32(AutoExposure));
         PlayerPrefs.SetInt("DepthOfField", Convert.ToInt32(DepthOfField));
+        PlayerPrefs.SetFloat("Volume", volume);
 
-        print(Motionblur);
-        print(Bloom);
-        print(AutoExposure);
-        print(DepthOfField);
+        print(volume);
         this.gameObject.SetActive(false);
+    }
+    public void ChangeVolume()
+    {
+        if (on)
+        {
+            volume = Slider.GetComponent<Slider>().value;
+            AudioListener.volume = volume;
+        }
     }
     public void ChangeBlur()
     {

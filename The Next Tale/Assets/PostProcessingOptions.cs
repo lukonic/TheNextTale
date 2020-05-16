@@ -33,6 +33,9 @@ public class PostProcessingOptions : MonoBehaviour
         Motionbluras.active = Motionblur;
         AutoExposureas.active = AutoExposure;
         DepthOfFieldas.active = DepthOfField;
+
+        
+        AudioListener.volume = PlayerPrefs.GetFloat("Volume", 1);
     }
 
     // Update is called once per frame

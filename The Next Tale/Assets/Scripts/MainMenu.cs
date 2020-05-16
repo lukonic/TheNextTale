@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     bool Bloom;
     bool AutoExposure;
     bool DepthOfField;
+    float volume;
     void Start()
     {
         AreYouSure = GameObject.Find("AreYouSure");
@@ -44,11 +45,13 @@ public class MainMenu : MonoBehaviour
         Bloom = Convert.ToBoolean(PlayerPrefs.GetInt("Bloom", 1));
         AutoExposure = Convert.ToBoolean(PlayerPrefs.GetInt("AutoExposure", 1));
         DepthOfField = Convert.ToBoolean(PlayerPrefs.GetInt("DepthOfField", 1));
+        volume = PlayerPrefs.GetFloat("Volume", 1);
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt("MotionBlur", Convert.ToInt32(Motionblur));
         PlayerPrefs.SetInt("Bloom", Convert.ToInt32(Bloom));
         PlayerPrefs.SetInt("AutoExposure", Convert.ToInt32(AutoExposure));
         PlayerPrefs.SetInt("DepthOfField", Convert.ToInt32(DepthOfField));
+        PlayerPrefs.SetFloat("Volume", volume);
         SceneManager.LoadScene("MainHub");
     }
     public void doMainMenu()
