@@ -26,8 +26,14 @@ public class PlayerController : MonoBehaviour
     public bool Carrying;
     public bool ON;
     Vector3 LastSpawn;
+
+    [SerializeField]
+    private AudioClip[] stoneClips;
+
+    private AudioSource audioSource;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         Instantiate(effect, transform.position, transform.rotation);
         m_Animator = GetComponent<Animator>();
@@ -37,6 +43,13 @@ public class PlayerController : MonoBehaviour
         GetLastSpawn();
         ON = true;
         // get the distance to ground
+    }
+
+    public void Step()
+    {
+        AudioClip clip = stoneClips[UnityEngine.Random.Range(0, stoneClips.Length)];
+
+        audioSource.PlayOneShot(clip);
     }
     public void GetLastSpawn()
     {
