@@ -51,6 +51,15 @@ public class Options : MonoBehaviour
         print(volume);
         this.gameObject.SetActive(false);
     }
+
+    public void changePP()
+    {
+
+        PlayerPrefs.SetInt("MotionBlur", Convert.ToInt32(Motionblur));
+        PlayerPrefs.SetInt("Bloom", Convert.ToInt32(Bloom));
+        PlayerPrefs.SetInt("AutoExposure", Convert.ToInt32(AutoExposure));
+        PlayerPrefs.SetInt("DepthOfField", Convert.ToInt32(DepthOfField));
+    }
     public void ChangeVolume()
     {
         if (on)
