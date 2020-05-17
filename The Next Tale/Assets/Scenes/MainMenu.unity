@@ -4252,6 +4252,7 @@ GameObject:
   - component: {fileID: 376134308}
   - component: {fileID: 376134309}
   - component: {fileID: 376134310}
+  - component: {fileID: 376134311}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4470,6 +4471,18 @@ MonoBehaviour:
   loadingScreenObj: {fileID: 1160795665}
   slider: {fileID: 804950697}
   progresstext: {fileID: 478135292}
+--- !u!114 &376134311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376134303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c29492be01c6b41bc8f17f4bd8ac67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &390425816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9602,7 +9615,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -70}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863520098

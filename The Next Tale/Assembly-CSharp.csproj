@@ -68,10 +68,12 @@
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMono\StyledMonoBehaviour.cs" />
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMono\StyledMonoHideScriptField.cs" />
      <Compile Include="Assets\Drop.cs" />
+     <Compile Include="Assets\EscapeMenu.cs" />
      <Compile Include="Assets\Healing.cs" />
      <Compile Include="Assets\HealthPickup.cs" />
      <Compile Include="Assets\LoadingScreenControl.cs" />
      <Compile Include="Assets\Low Polygon Potions Pack\Other Assets\Scripts\CreatePrefabFromSelected.cs" />
+     <Compile Include="Assets\MainMenuMouse.cs" />
      <Compile Include="Assets\Options.cs" />
      <Compile Include="Assets\PostProcessingOptions.cs" />
      <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_BrushMirror.cs" />

@@ -14,10 +14,11 @@ public class MainMenu : MonoBehaviour
     float volume;
     void Start()
     {
-        AreYouSure = GameObject.Find("AreYouSure");
-        AreYouSure.SetActive(false);
         Options = GameObject.Find("Options");
         Options.SetActive(false);
+        AreYouSure = GameObject.Find("AreYouSure");
+        AreYouSure.SetActive(false);
+        
     }
     public void doExitGame()
     {
@@ -65,5 +66,9 @@ public class MainMenu : MonoBehaviour
     public void doOptionsCancel()
     {
         Options.SetActive(false);
+    }
+    public void print()
+    {
+        print("resume");
     }
 }

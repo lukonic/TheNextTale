@@ -18,6 +18,7 @@ TagManager:
   - barrel
   - HealingCanvas
   - DeadCanvas
+  - PostProc
   layers:
   - Default
   - TransparentFX

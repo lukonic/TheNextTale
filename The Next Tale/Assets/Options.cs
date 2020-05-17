@@ -18,9 +18,11 @@ public class Options : MonoBehaviour
     public GameObject Toggle_auto;
     public GameObject Toggle_depth;
     public GameObject Slider;
+    public GameObject postproc;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
+        postproc = GameObject.FindGameObjectWithTag("PostProc");
         Motionblur = Convert.ToBoolean(PlayerPrefs.GetInt("MotionBlur",1));
         Bloom = Convert.ToBoolean(PlayerPrefs.GetInt("Bloom", 1));
         AutoExposure = Convert.ToBoolean(PlayerPrefs.GetInt("AutoExposure", 1));
@@ -59,6 +61,8 @@ public class Options : MonoBehaviour
         PlayerPrefs.SetInt("Bloom", Convert.ToInt32(Bloom));
         PlayerPrefs.SetInt("AutoExposure", Convert.ToInt32(AutoExposure));
         PlayerPrefs.SetInt("DepthOfField", Convert.ToInt32(DepthOfField));
+        postproc = GameObject.FindGameObjectWithTag("PostProc");
+        postproc.GetComponent<PostProcessingOptions>().change();
     }
     public void ChangeVolume()
     {
