@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     bool AutoExposure;
     bool DepthOfField;
     float volume;
+
     void Start()
     {
         Options.SetActive(false);

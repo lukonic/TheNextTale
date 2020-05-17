@@ -7,6 +7,7 @@ public class GameOverManager : MonoBehaviour
      GameObject player;
      GameObject ragdollas;
     GameObject Canvas;
+    GameObject RealCanvas;
     public GameObject mesh;
     public CameraFollow cameraMovement;
     bool dead;
@@ -14,6 +15,7 @@ public class GameOverManager : MonoBehaviour
 
     private void Start()
     {
+        RealCanvas = GameObject.Find("Canvas");
         // Hide the cursor when playing
         Cursor.visible = false;
         dead = false;
@@ -26,6 +28,7 @@ public class GameOverManager : MonoBehaviour
         ragdollas.SetActive(false);
         Canvas = GameObject.FindGameObjectWithTag("DeadCanvas");
         Canvas.SetActive(false);
+        RealCanvas.GetComponent<EscapeMenu>().ijungtasDeath = false;
     }
     private void Update()
     {
@@ -48,6 +51,7 @@ public class GameOverManager : MonoBehaviour
             player.GetComponent<Animator>().enabled = false;
             dead = true;
             Canvas.SetActive(true);
+            RealCanvas.GetComponent<EscapeMenu>().ijungtasDeath = true;
             GameObject.Find("Canvas").GetComponent<AudioSource>().Stop();
             //GameObject.Find("Camera").GetComponent<AudioListener>().enabled = true;
         }

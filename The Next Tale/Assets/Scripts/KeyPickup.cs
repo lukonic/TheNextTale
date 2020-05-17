@@ -15,6 +15,7 @@ public class KeyPickup : MonoBehaviour
     // Position Storage Variables
     Vector3 posOffset = new Vector3();
     Vector3 tempPos = new Vector3();
+    private AudioSource audioSource;
 
     // Use this for initialization
 
@@ -25,12 +26,14 @@ public class KeyPickup : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerScore = player.GetComponent<PlayerScore>();
         posOffset = transform.position;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player)
         {
+            AudioSource.PlayClipAtPoint(audioSource.clip, this.transform.position);
             Instantiate(effect, transform.position, transform.rotation);
             playerScore.currentKeys++;
             print("Veikia");

@@ -13,9 +13,11 @@ public class VaseDestroy : MonoBehaviour
     public float boostup = 15;
     public bool TimeToDie;
     public bool TimeToDieStrong;
+    private AudioSource audioSource;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class VaseDestroy : MonoBehaviour
             Instantiate(effect_wood, transform.position + new Vector3(0, 1), new Quaternion(0, 0, 0, 0));
             Instantiate(spawn, transform.position+ new Vector3(0,0.5f), transform.rotation);
             print("Veikia");
+            AudioSource.PlayClipAtPoint(audioSource.clip, this.transform.position);
             gameObject.SetActive(false);
 
         }
@@ -44,6 +47,7 @@ public class VaseDestroy : MonoBehaviour
                 Instantiate(spawn, transform.position + new Vector3(0, 0.5f), transform.rotation);
                 Instantiate(effect_wood, transform.position + new Vector3(0, 1), new Quaternion(0, 0, 0, 0));
                 print("Veikia");
+                AudioSource.PlayClipAtPoint(audioSource.clip, this.transform.position);
                 gameObject.SetActive(false);
                 player.GetComponent<LevelInventory>().BarrelWithoutJump++;
             }

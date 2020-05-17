@@ -3027,6 +3027,7 @@ MonoBehaviour:
   Toggle_auto: {fileID: 1716193556}
   Toggle_depth: {fileID: 1947996721}
   Slider: {fileID: 804655867}
+  postproc: {fileID: 0}
 --- !u!1001 &256359510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4360,6 +4361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632cce76c43977f45a435c68e1a23edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AreYouSure: {fileID: 854068771}
+  Options: {fileID: 250752723}
+  EscapeCanvas: {fileID: 0}
 --- !u!82 &376134309
 AudioSource:
   m_ObjectHideFlags: 0

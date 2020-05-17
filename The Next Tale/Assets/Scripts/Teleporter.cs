@@ -13,6 +13,7 @@ public class Teleporter : MonoBehaviour
     public GameObject effect;
     public int Gems;
     public int Secrets;
+    GameObject RealCanvas;
 
     public string LevelName;
 
@@ -23,11 +24,13 @@ public class Teleporter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RealCanvas = GameObject.Find("Canvas");
         player = GameObject.FindGameObjectWithTag("Player");
         UI = GameObject.FindGameObjectWithTag("ContinueButton");
         updateTimer = true;
         leveltimer = 0.0f;
         UI.SetActive(false);
+        RealCanvas.GetComponent<EscapeMenu>().ijungtasLevelComplete = false;
     }
 
     void Update()
@@ -69,6 +72,7 @@ public class Teleporter : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             UI.SetActive(true);
+            RealCanvas.GetComponent<EscapeMenu>().ijungtasLevelComplete = true;
             GameObject.Find("Canvas").GetComponent<AudioSource>().Stop();
             GameObject.Find("Camera").GetComponent<AudioListener>().enabled = true;
             this.GetComponent<AudioSource>().Play();

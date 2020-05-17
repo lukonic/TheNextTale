@@ -8,6 +8,7 @@ public class AchievementManager : MonoBehaviour
     // Start is called before the first frame update
     GameObject player;
     GameObject camera;
+    GameObject RealCanvas;
     public GameObject achievementPrefab;
     public Sprite[] Sprites;
     public GameObject canvas;
@@ -15,6 +16,7 @@ public class AchievementManager : MonoBehaviour
     public ScrollRect scrollRect;
     private bool first;
     private bool InTrigger;
+    bool on;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -38,6 +40,9 @@ public class AchievementManager : MonoBehaviour
         
         activeButton.Click();
         canvas.SetActive(false);
+        RealCanvas = GameObject.Find("Canvas");
+        RealCanvas.GetComponent<EscapeMenu>().ijungtasAchievements = false;
+        on = false;
     }
     void Update()
     {
@@ -58,6 +63,10 @@ public class AchievementManager : MonoBehaviour
 
             Vector3 newDir2 = Vector3.RotateTowards(player.transform.forward, targetDir2, step2, 0.0F);
             Debug.DrawRay(player.transform.position, newDir2, Color.red);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) && on)
+        {
+            TurnOff();
         }
     }
     public void CreateAchievement(string category, string title, string description, int points, string name)
@@ -96,12 +105,15 @@ public class AchievementManager : MonoBehaviour
     {
         if (other.gameObject == player)
         {
+
             canvas.SetActive(true);
             player.GetComponent<PlayerController>().ON = false;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             camera.GetComponent<CameraFollow>().ON = false;
             InTrigger = true;
+            on = true;
+            RealCanvas.GetComponent<EscapeMenu>().ijungtasAchievements = true;
         }
     }
     public void TurnOff()
@@ -112,6 +124,8 @@ public class AchievementManager : MonoBehaviour
         camera.GetComponent<CameraFollow>().ON = true;
         canvas.SetActive(false);
         InTrigger = false;
+        on = false;
+        RealCanvas.GetComponent<EscapeMenu>().ijungtasAchievements = false;
     }
 
 }

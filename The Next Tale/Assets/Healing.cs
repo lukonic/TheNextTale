@@ -6,18 +6,21 @@ public class Healing : MonoBehaviour
 {
     GameObject player;
     GameObject camera;
+    GameObject RealCanvas;
     public GameObject effect;
     public GameObject canvas;
     public bool InTrigger;
     // Start is called before the first frame update
     void Start()
     {
+        RealCanvas = GameObject.Find("Canvas");
         player = GameObject.FindGameObjectWithTag("Player");
         canvas = GameObject.FindGameObjectWithTag("HealingCanvas");
         camera = GameObject.FindGameObjectWithTag("CameraFolder");
         canvas.transform.GetChild(0).gameObject.SetActive(false);
         canvas.transform.GetChild(1).gameObject.SetActive(false);
         canvas.transform.GetChild(2).gameObject.SetActive(false);
+        RealCanvas.GetComponent<EscapeMenu>().ijungtasHealer = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +30,7 @@ public class Healing : MonoBehaviour
             canvas.SetActive(true);
             canvas.SetActive(false);
             canvas.SetActive(true);
+            RealCanvas.GetComponent<EscapeMenu>().ijungtasHealer = true;
             CheckHP();
             player.GetComponent<PlayerController>().ON = false;
             Cursor.lockState = CursorLockMode.None;
@@ -74,11 +78,16 @@ public class Healing : MonoBehaviour
         camera.GetComponent<CameraFollow>().ON = true;
         canvas.SetActive(false);
         InTrigger = false;
+        RealCanvas.GetComponent<EscapeMenu>().ijungtasHealer = false;
     }
     void Update()
     {
         if (InTrigger)
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                TurnOff();
+            }
             Vector3 targetDir = player.transform.position - transform.position;
             targetDir.y = 0;
             float step = 2 * Time.deltaTime;
@@ -95,5 +104,6 @@ public class Healing : MonoBehaviour
             Vector3 newDir2 = Vector3.RotateTowards(player.transform.forward, targetDir2, step2, 0.0F);
             Debug.DrawRay(player.transform.position, newDir2, Color.red);
         }
+        
     }
 }
