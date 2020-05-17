@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public bool ON;
     Vector3 LastSpawn;
     bool landed;
-
+    bool passed = true;
     [SerializeField]
     private AudioClip[] stoneClips;
     [SerializeField]
@@ -75,6 +75,8 @@ public class PlayerController : MonoBehaviour
             {
                 audioSource.PlayOneShot(land);
                 landed = false;
+                StartCoroutine(ExecuteAfterTime(1.0f));
+                
             }
             m_Animator.SetBool("IsJumping", false);
             if (Input.GetButtonDown("Jump") && Carrying == false && ON == true && !tankas)
@@ -107,11 +109,20 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            landed = true;
+            if (passed)
+            {
+                landed = true;
+                passed = false;
+            }
             m_Animator.SetBool("IsJumping", true);
         }
         DirectUpdate();
         
+    }
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        passed = true;
     }
     public bool IsGrounded()
     {
