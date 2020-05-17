@@ -2474,6 +2474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632cce76c43977f45a435c68e1a23edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Options: {fileID: 8488104439933701210}
+  EscapeCanvas: {fileID: 4555590541336607583}
 --- !u!1 &4811147097476605697
 GameObject:
   m_ObjectHideFlags: 0
@@ -3728,6 +3730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632cce76c43977f45a435c68e1a23edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Options: {fileID: 0}
+  EscapeCanvas: {fileID: 0}
 --- !u!82 &6482496966318289894
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5453,6 +5457,7 @@ MonoBehaviour:
   Toggle_auto: {fileID: 5257032886866152934}
   Toggle_depth: {fileID: 3906349711714799210}
   Slider: {fileID: 7110877139388221008}
+  postproc: {fileID: 0}
 --- !u!1 &8572079857147447708
 GameObject:
   m_ObjectHideFlags: 0

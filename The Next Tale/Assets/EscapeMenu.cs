@@ -9,9 +9,8 @@ public class EscapeMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EscapeCanvas = GameObject.Find("EscapeCanvas");
+        
         ijungtas = false;
-        EscapeCanvas.SetActive(false);
     }
 
     // Update is called once per frame

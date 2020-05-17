@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    GameObject AreYouSure;
-    GameObject Options;
+    public GameObject AreYouSure;
+    public GameObject Options;
+    public GameObject EscapeCanvas;
 
     bool Motionblur;
     bool Bloom;
@@ -14,9 +15,9 @@ public class MainMenu : MonoBehaviour
     float volume;
     void Start()
     {
-        Options = GameObject.Find("Options");
         Options.SetActive(false);
-        AreYouSure = GameObject.Find("AreYouSure");
+        if(EscapeCanvas != null)
+        EscapeCanvas.SetActive(false);
         AreYouSure.SetActive(false);
         
     }
@@ -37,7 +38,6 @@ public class MainMenu : MonoBehaviour
     }
     public void doOptions()
     {
-
         Options.SetActive(true);
     }
     public void doStartNewGame()
