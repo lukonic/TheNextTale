@@ -27,6 +27,7 @@ public class Door : MonoBehaviour
             if (playerScore.currentKeys > 0)
             {
                 playerScore.currentKeys--;
+                player.GetComponent<LevelInventory>().KeysLeft--;
                 atidarom = true;
                 islausta = true;
                 clipas = GetComponent<AudioSource>().clip;

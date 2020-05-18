@@ -61,6 +61,7 @@ public class PlayerHealth : MonoBehaviour
         {
             currentHealth = currentHealth - damage;
             health = currentHealth;
+            this.GetComponent<LevelInventory>().DMGtaken++;
         }
     }
 }

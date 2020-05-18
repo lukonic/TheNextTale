@@ -69,11 +69,13 @@
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMono\StyledMonoHideScriptField.cs" />
      <Compile Include="Assets\Drop.cs" />
      <Compile Include="Assets\EscapeMenu.cs" />
+     <Compile Include="Assets\FarmScript.cs" />
      <Compile Include="Assets\Healing.cs" />
      <Compile Include="Assets\HealthPickup.cs" />
      <Compile Include="Assets\LoadingScreenControl.cs" />
      <Compile Include="Assets\Low Polygon Potions Pack\Other Assets\Scripts\CreatePrefabFromSelected.cs" />
      <Compile Include="Assets\MainMenuMouse.cs" />
+     <Compile Include="Assets\MissionPickUp.cs" />
      <Compile Include="Assets\Options.cs" />
      <Compile Include="Assets\PostProcessingOptions.cs" />
      <Compile Include="Assets\ProCore\Polybrush\Code\Enum\z_BrushMirror.cs" />
@@ -104,6 +106,8 @@
      <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_MeshUtility.cs" />
      <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_Util.cs" />
      <Compile Include="Assets\ProCore\Polybrush\Code\Scripts\Utility\z_Vector.cs" />
+     <Compile Include="Assets\RootVegetables\Scripts\Rotate.cs" />
+     <Compile Include="Assets\SawBladeScript.cs" />
      <Compile Include="Assets\Scripts\AchievementCategoryButton.cs" />
      <Compile Include="Assets\Scripts\AchievementManager.cs" />
      <Compile Include="Assets\Scripts\AchievementVariable.cs" />
@@ -137,6 +141,7 @@
      <Compile Include="Assets\Scripts\TorchLightUp.cs" />
      <Compile Include="Assets\Scripts\VaseDestroy.cs" />
      <Compile Include="Assets\TeleporterForLevel4.cs" />
+     <Compile Include="Assets\TerrainTexture.cs" />
      <Compile Include="Assets\Trap.cs" />
      <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlender_SfSrc.shader" />
      <None Include="Assets\ProCore\Polybrush\ThirdPartyLicenses.txt" />

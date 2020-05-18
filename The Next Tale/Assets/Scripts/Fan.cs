@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class Fan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        IsFanOn = Convert.ToBoolean(PlayerPrefs.GetInt("MLVL1", 0));
     }
 
     // Update is called once per frame

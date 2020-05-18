@@ -22,6 +22,7 @@ public class AchievementManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         camera = GameObject.FindGameObjectWithTag("CameraFolder");
         activeButton = GameObject.Find("Level1Button").GetComponent<AchievementCategoryButton>();
+        CreateAchievement("Level1", "Windmills", "Find all 5 Windmill cogs to make them work again", 10, "MLVL1");
         CreateAchievement("Level1", "From E to the Z", "Reach the end teleporter", 5, "Level1_Complete");
         CreateAchievement("Level1", "Darkness away!", "Light up all 7 torches", 2, "Level1_Torches");
         CreateAchievement("Level1", "Whoops", "Break open a barrel without jumping on it", 2, "Level1_Barrel_Jump");
@@ -32,7 +33,30 @@ public class AchievementManager : MonoBehaviour
         CreateAchievement("Level1", "Two party system", "Retrieve the key in under 10 seconds", 5, "Level1_Race_Key");
         CreateAchievement("Level1", "AAAAAHHHHH", "Complete the level in under 22 seconds", 10, "Level1_Race");
 
-        CreateAchievement("Level2", "Done and Done", "Reach the end teleporter", 10, "Level2_Complete");
+        CreateAchievement("Level2", "Farms", "Find all 10 Crop seeds to save the town from famine", 10, "MLVL2");
+        CreateAchievement("Level2", "Done and done", "Reach the end teleporter", 5, "Level2_Complete");
+        CreateAchievement("Level2", "Untouchable", "Finish the level without losing a single life", 5, "Level2_NoDMG");
+        CreateAchievement("Level2", "It's bright as is!", "Light up all 15 torches", 2, "Level2_Torches");
+        CreateAchievement("Level2", "D-O-S-H", "Find all 21 green gems", 2, "Level2_Gems");
+        CreateAchievement("Level2", "Shiny!", "Find 2 secrets in the level", 5, "Level2_Secret");
+        CreateAchievement("Level2", "Excess", "Finish the level with a key in your inventory", 5, "Level2_2Keys");
+        CreateAchievement("Level2", "AAAAAHHHHH", "Complete the level in under 85 seconds", 10, "Level2_Race");
+
+        CreateAchievement("Level3", "Sawblade", "Bring back the Sawblade for the lumberjack", 10, "MLVL3");
+        CreateAchievement("Level3", "Out of here", "Reach the end teleporter", 5, "Level3_Complete");
+        CreateAchievement("Level3", "Evasive", "Finish the level without losing a single life", 5, "Level3_NoDMG");
+        CreateAchievement("Level3", "It burns!", "Light up all 3 torches", 2, "Level3_Torches");
+        CreateAchievement("Level3", "Smashy", "Find all 19 green gems", 2, "Level3_Gems");
+        CreateAchievement("Level3", "Who hides treasures?", "Find 2 secrets in the level", 5, "Level3_Secret");
+        CreateAchievement("Level3", "AAAAAHHHHH", "Complete the level in under 110 seconds", 10, "Level3_Race");
+
+        CreateAchievement("Level4", "Saplings", "Bring back 10 magical saplings to restore the foliage in town", 10, "MLVL4");
+        CreateAchievement("Level4", "The deed is done", "Reach the end teleporter", 5, "Level4_Complete");
+        CreateAchievement("Level4", "Not curious enough", "Finish the level without losing a single life", 5, "Level4_NoDMG");
+        CreateAchievement("Level4", "Ignition!", "Light up 10 pots", 2, "Level4_Torches");
+        CreateAchievement("Level4", "Green is good", "Find all 14 green gems", 2, "Level4_Gems");
+        CreateAchievement("Level4", "Peekers advantage", "Find a secret in the level", 5, "Level4_Secret");
+        CreateAchievement("Level4", "AAAAAHHHHH", "Complete the level in under 150 seconds", 10, "Level4_Race");
         foreach (GameObject achievementlist in GameObject.FindGameObjectsWithTag("AchievementList"))
         {
             achievementlist.SetActive(false);

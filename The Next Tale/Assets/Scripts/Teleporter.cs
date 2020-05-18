@@ -48,6 +48,10 @@ public class Teleporter : MonoBehaviour
             levelcompleted.text = "LEVEL COMPLETED";
             gem.text = "GEMS FOUND: " + player.GetComponent<PlayerScore>().gems.ToString() + "/" + Gems.ToString();
             secret.text = "SECRETS FOUND: " + player.GetComponent<PlayerScore>().secrets.ToString() + "/" + (Secrets - PlayerPrefs.GetInt(LevelName, 0)).ToString();
+            if(player.GetComponent<PlayerScore>().secrets == (Secrets - PlayerPrefs.GetInt(LevelName, 0)))
+            {
+                player.GetComponent<LevelInventory>().AllSecrets = true;
+            }
             TimeTaken.text = "TIME: " + leveltimer.ToString() ;
             Instantiate(effect, transform.position, transform.rotation);
 
@@ -81,7 +85,19 @@ public class Teleporter : MonoBehaviour
             {
                 player.GetComponent<Saving>().SaveLevel1();
             }
-            
+            if (LevelName == "L2")
+            {
+                player.GetComponent<Saving>().SaveLevel2();
+            }
+            if (LevelName == "L3")
+            {
+                player.GetComponent<Saving>().SaveLevel3();
+            }
+            if (LevelName == "L4")
+            {
+                player.GetComponent<Saving>().SaveLevel4();
+            }
+
 
         }
     }

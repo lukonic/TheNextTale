@@ -36,6 +36,7 @@ public class KeyPickup : MonoBehaviour
             AudioSource.PlayClipAtPoint(audioSource.clip, this.transform.position);
             Instantiate(effect, transform.position, transform.rotation);
             playerScore.currentKeys++;
+            player.GetComponent<LevelInventory>().KeysLeft++;
             print("Veikia");
             gameObject.SetActive(false);
             if(teleporter.GetComponent<Teleporter>().leveltimer < 10)

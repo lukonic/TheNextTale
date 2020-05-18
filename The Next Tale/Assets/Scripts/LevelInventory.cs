@@ -15,11 +15,15 @@ public class LevelInventory : MonoBehaviour
     public int jumps;
     public int NoKey;
     public int KeyInTime;
+    public int DMGtaken;
     public float Level1Time;
+    public int KeysLeft;
+
+    public bool AllSecrets;
+    public int MissionCounter;
     void Start()
     {
         TorchesLit = 0;
-
 
 
 

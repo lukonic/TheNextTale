@@ -53,7 +53,18 @@ public class Saving : MonoBehaviour
     }
     public void SaveLevel1()
     {
+        if((PlayerPrefs.GetInt("MLVL1", 0)) == 0)
+        {
+            if(player.GetComponent<LevelInventory>().MissionCounter >= 5)
+            {
+                ArDuotExp("MLVL1", 5);
+                PlayerPrefs.SetInt("MLVL1", 1);
+                
+            }
+        }
         ArDuotExp("Level1_Complete", 5);
+        PlayerPrefs.SetInt("Level1_Complete", 1);
+        
         PlayerPrefs.SetInt("Level1_Complete", 1);
         if (player.GetComponent<LevelInventory>().TorchesLit == 7)
         {
@@ -96,6 +107,137 @@ public class Saving : MonoBehaviour
         {
             ArDuotExp("Level1_Race", 5);
             PlayerPrefs.SetInt("Level1_Race", 1);
+        }
+
+    }
+    public void SaveLevel2()
+    {
+        if ((PlayerPrefs.GetInt("MLVL2", 0)) == 0)
+        {
+            if (player.GetComponent<LevelInventory>().MissionCounter >= 10)
+            {
+                ArDuotExp("MLVL2", 5);
+                PlayerPrefs.SetInt("MLVL2", 1);
+
+            }
+        }
+        ArDuotExp("Level2_Complete", 5);
+        PlayerPrefs.SetInt("Level2_Complete", 1);
+
+        PlayerPrefs.SetInt("Level2_Complete", 1);
+        if (player.GetComponent<LevelInventory>().DMGtaken == 0)
+        {
+            ArDuotExp("Level2_NoDMG", 5);
+            PlayerPrefs.SetInt("Level2_NoDMG", 1);
+        }
+        if (player.GetComponent<LevelInventory>().TorchesLit == 15)
+        {
+            ArDuotExp("Level2_Torches", 5);
+            PlayerPrefs.SetInt("Level2_Torches", 1);
+        }
+        if (player.GetComponent<LevelInventory>().Gems == 21)
+        {
+            ArDuotExp("Level2_Gems", 5);
+            PlayerPrefs.SetInt("Level2_Gems", 1);
+        }
+        if (player.GetComponent<LevelInventory>().AllSecrets == true)
+        {
+            ArDuotExp("Level2_Secret", 5);
+            PlayerPrefs.SetInt("Level2_Secret", 1);
+        }
+        if (player.GetComponent<LevelInventory>().KeysLeft >= 1)
+        {
+            ArDuotExp("Level2_2Keys", 5);
+            PlayerPrefs.SetInt("Level2_2Keys", 1);
+        }
+        if (player.GetComponent<LevelInventory>().Level1Time < 85)
+        {
+            ArDuotExp("Level2_Race", 5);
+            PlayerPrefs.SetInt("Level2_Race", 1);
+        }
+
+    }
+    public void SaveLevel3()
+    {
+        if ((PlayerPrefs.GetInt("MLVL3", 0)) == 0)
+        {
+            if (player.GetComponent<LevelInventory>().MissionCounter >= 1)
+            {
+                ArDuotExp("MLVL3", 5);
+                PlayerPrefs.SetInt("MLVL3", 1);
+
+            }
+        }
+        ArDuotExp("Level3_Complete", 5);
+        PlayerPrefs.SetInt("Level3_Complete", 1);
+
+        PlayerPrefs.SetInt("Level3_Complete", 1);
+        if (player.GetComponent<LevelInventory>().DMGtaken == 0)
+        {
+            ArDuotExp("Level3_NoDMG", 5);
+            PlayerPrefs.SetInt("Level3_NoDMG", 1);
+        }
+        if (player.GetComponent<LevelInventory>().TorchesLit == 3)
+        {
+            ArDuotExp("Level3_Torches", 5);
+            PlayerPrefs.SetInt("Level3_Torches", 1);
+        }
+        if (player.GetComponent<LevelInventory>().Gems == 19)
+        {
+            ArDuotExp("Level3_Gems", 5);
+            PlayerPrefs.SetInt("Level3_Gems", 1);
+        }
+        if (player.GetComponent<LevelInventory>().AllSecrets == true)
+        {
+            ArDuotExp("Level3_Secret", 5);
+            PlayerPrefs.SetInt("Level3_Secret", 1);
+        }
+        if (player.GetComponent<LevelInventory>().Level1Time < 110)
+        {
+            ArDuotExp("Level3_Race", 5);
+            PlayerPrefs.SetInt("Level3_Race", 1);
+        }
+
+    }
+    public void SaveLevel4()
+    {
+        if ((PlayerPrefs.GetInt("MLVL4", 0)) == 0)
+        {
+            if (player.GetComponent<LevelInventory>().MissionCounter >= 10)
+            {
+                ArDuotExp("MLVL4", 5);
+                PlayerPrefs.SetInt("MLVL4", 1);
+
+            }
+        }
+        ArDuotExp("Level4_Complete", 5);
+        PlayerPrefs.SetInt("Level4_Complete", 1);
+
+        PlayerPrefs.SetInt("Level4_Complete", 1);
+        if (player.GetComponent<LevelInventory>().DMGtaken == 0)
+        {
+            ArDuotExp("Level4_NoDMG", 5);
+            PlayerPrefs.SetInt("Level4_NoDMG", 1);
+        }
+        if (player.GetComponent<LevelInventory>().TorchesLit == 10)
+        {
+            ArDuotExp("Level4_Torches", 5);
+            PlayerPrefs.SetInt("Level4_Torches", 1);
+        }
+        if (player.GetComponent<LevelInventory>().Gems == 14)
+        {
+            ArDuotExp("Level4_Gems", 5);
+            PlayerPrefs.SetInt("Level4_Gems", 1);
+        }
+        if (player.GetComponent<LevelInventory>().AllSecrets == true)
+        {
+            ArDuotExp("Level4_Secret", 5);
+            PlayerPrefs.SetInt("Level4_Secret", 1);
+        }
+        if (player.GetComponent<LevelInventory>().Level1Time < 150)
+        {
+            ArDuotExp("Level4_Race", 5);
+            PlayerPrefs.SetInt("Level4_Race", 1);
         }
 
     }
