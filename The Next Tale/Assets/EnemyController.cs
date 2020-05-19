@@ -12,7 +12,6 @@ public class EnemyController : MonoBehaviour
     NavMeshAgent agent;
     public float boostup = 3;
     public GameObject blood;
-    GameObject kraujas;
     public GameObject deadMonster;
     private AudioSource audioSource;
     public AudioClip die;
@@ -21,10 +20,12 @@ public class EnemyController : MonoBehaviour
     Vector3 hitDirection;
     public float pushBackForce = 8;
     bool found;
+    bool allowkill;
 
     // Start is called before the first frame update
     void Start()
     {
+        allowkill = true;
         player = GameObject.FindGameObjectWithTag("Player");
         target = player.transform;
         agent = GetComponent<NavMeshAgent>();
@@ -57,26 +58,35 @@ public class EnemyController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject == player && allowkill && (player.GetComponent<Rigidbody>().velocity.y < -1))
         {
             Kill();
         }
     }
-    void OnCollisionEnter(Collision other)
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        allowkill = true;
+    }
+    void OnCollisionStay(Collision other)
     {
         if (other.gameObject == player && player.GetComponent<PlayerHealth>().invincibility == false)
         {
+            allowkill = false;
+            
             player.GetComponent<PlayerHealth>().TakeDamage(1);
-            kraujas = Instantiate(blood, player.transform.GetChild(1).gameObject.transform.position + new Vector3(0, 1, 0), player.transform.rotation);
-            kraujas.transform.parent = player.transform;
+            Instantiate(blood, player.transform.GetChild(1).gameObject.transform.position + new Vector3(0, 1, 0), player.transform.rotation);
             AudioSource.PlayClipAtPoint(find, this.transform.position);
             hitDirection = other.transform.position - transform.position;
-            hitDirection = hitDirection.normalized * pushBackForce;
+            hitDirection = hitDirection.normalized*10;
+            hitDirection.y = 5;
             other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             other.gameObject.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            //player.GetComponent<Rigidbody>().Sleep();
-            other.gameObject.GetComponent<Rigidbody>().AddRelativeForce(hitDirection * 500, ForceMode.VelocityChange);
-        }
+            player.GetComponent<Rigidbody>().Sleep();
+            other.gameObject.GetComponent<Rigidbody>().AddForce(hitDirection, ForceMode.VelocityChange);
+            StartCoroutine(ExecuteAfterTime(.5f));
+
+        }       
     }
     public void Kill()
     {
@@ -88,5 +98,11 @@ public class EnemyController : MonoBehaviour
         player.GetComponent<Rigidbody>().AddForce(Vector3.up * boostup, ForceMode.VelocityChange);
         AudioSource.PlayClipAtPoint(die, this.transform.position);
 
+    }
+    public void KillBarrel()
+    {
+        Instantiate(deadMonster, transform.position, transform.rotation);
+        this.gameObject.SetActive(false);
+        AudioSource.PlayClipAtPoint(die, this.transform.position);
     }
 }

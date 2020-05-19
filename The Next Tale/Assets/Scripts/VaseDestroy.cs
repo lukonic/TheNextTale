@@ -50,7 +50,12 @@ public class VaseDestroy : MonoBehaviour
                 AudioSource.PlayClipAtPoint(audioSource.clip, this.transform.position);
                 gameObject.SetActive(false);
                 player.GetComponent<LevelInventory>().BarrelWithoutJump++;
+
             }
+        }
+        if (other.gameObject.tag == "Monster" && TimeToDie == true || GetComponent<Rigidbody>().velocity.y < -4 && other.gameObject.tag == "Monster")
+        {
+            other.gameObject.GetComponent<EnemyController>().KillBarrel();
         }
     }
 }
