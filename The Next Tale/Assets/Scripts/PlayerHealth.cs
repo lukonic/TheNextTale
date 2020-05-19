@@ -62,6 +62,14 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = currentHealth - damage;
             health = currentHealth;
             this.GetComponent<LevelInventory>().DMGtaken++;
+            invincibility = true;
+            StartCoroutine(ExecuteAfterTime(1.5f));
         }
+    }
+
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        invincibility = false;
     }
 }

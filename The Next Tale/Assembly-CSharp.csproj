@@ -68,6 +68,7 @@
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMono\StyledMonoBehaviour.cs" />
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMono\StyledMonoHideScriptField.cs" />
      <Compile Include="Assets\Drop.cs" />
+     <Compile Include="Assets\EnemyController.cs" />
      <Compile Include="Assets\EscapeMenu.cs" />
      <Compile Include="Assets\FarmScript.cs" />
      <Compile Include="Assets\Healing.cs" />
@@ -143,6 +144,8 @@
      <Compile Include="Assets\TeleporterForLevel4.cs" />
      <Compile Include="Assets\TerrainTexture.cs" />
      <Compile Include="Assets\Trap.cs" />
+     <Compile Include="Assets\amusedART\Mushroom_Monster\Script\MushroomMon_Ani_Test.cs" />
+     <Compile Include="Assets\amusedART\StoneMonster\Script\Animation_Test.cs" />
      <None Include="Assets\ProCore\Polybrush\Shader\z_TextureBlender_SfSrc.shader" />
      <None Include="Assets\ProCore\Polybrush\ThirdPartyLicenses.txt" />
      <None Include="Assets\ProCore\Polybrush\Shader\Example\z_UnlitTextureBlendAndSnow.shader" />

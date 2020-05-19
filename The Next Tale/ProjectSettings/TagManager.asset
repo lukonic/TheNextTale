@@ -19,6 +19,7 @@ TagManager:
   - HealingCanvas
   - DeadCanvas
   - PostProc
+  - Monster
   layers:
   - Default
   - TransparentFX

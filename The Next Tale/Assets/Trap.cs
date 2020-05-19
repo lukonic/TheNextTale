@@ -50,6 +50,11 @@ public class Trap : MonoBehaviour
                 StartCoroutine(ExecuteAfterTime(2));
             }
         }
+        if (collision.other.gameObject.CompareTag("Monster"))
+        {
+            print("RIP");
+            collision.other.gameObject.GetComponent<EnemyController>().Kill();
+        }
     }
     IEnumerator ExecuteAfterTime(float time)
     {
