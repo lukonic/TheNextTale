@@ -9,6 +9,7 @@ public class HealthPickup : MonoBehaviour
     public float degreesPerSecond;
     public float amplitude;
     public float frequency;
+    private AudioSource audioSource;
 
     // Position Storage Variables
     Vector3 posOffset = new Vector3();
@@ -21,6 +22,7 @@ public class HealthPickup : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         posOffset = transform.position;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,6 +34,7 @@ public class HealthPickup : MonoBehaviour
                 player.GetComponent<PlayerHealth>().currentHealth++;
                 Instantiate(effect, transform.position, transform.rotation);
                 print("Veikia");
+                AudioSource.PlayClipAtPoint(audioSource.clip, this.transform.position);
                 gameObject.SetActive(false);
             }
         }

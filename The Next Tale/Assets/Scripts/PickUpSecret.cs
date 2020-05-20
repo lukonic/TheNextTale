@@ -8,6 +8,7 @@ public class PickUpSecret : MonoBehaviour
     PlayerScore playerScore;
     public GameObject effect;
     private bool pickuable;
+    private AudioSource audioSource;
 
     // Use this for initialization
 
@@ -18,6 +19,7 @@ public class PickUpSecret : MonoBehaviour
         playerScore = player.GetComponent<PlayerScore>();
         pickuable = false;
         StartCoroutine(ExecuteAfterTime2(0.3f));
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,6 +28,7 @@ public class PickUpSecret : MonoBehaviour
         {
             if (pickuable == true)
             {
+                AudioSource.PlayClipAtPoint(audioSource.clip, this.transform.position);
                 Instantiate(effect, transform.position, transform.rotation);
                 playerScore.currentScore += 10;
                 print("Veikia");

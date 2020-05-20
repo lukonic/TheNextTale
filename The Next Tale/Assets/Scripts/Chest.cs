@@ -10,6 +10,7 @@ public class Chest : MonoBehaviour
     Animator m_Animator;
     private bool open;
     public string WhatBox;
+    private AudioSource audioSource;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -20,6 +21,7 @@ public class Chest : MonoBehaviour
             m_Animator.SetBool("Atidaryta", true);
             open = true;
         }
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,7 @@ public class Chest : MonoBehaviour
                 Instantiate(effect, transform.position + new Vector3(0, 1f), transform.rotation);
                 m_Animator.SetBool("Atidaryta", true);
                 open = true;
+                AudioSource.PlayClipAtPoint(audioSource.clip, this.transform.position);
             }
         }
     }

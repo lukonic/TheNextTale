@@ -6,11 +6,13 @@ public class Catapult : MonoBehaviour
 {
     GameObject player;
     public bool IsON;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         IsON = false;
+        audioSource = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -18,7 +20,8 @@ public class Catapult : MonoBehaviour
         if (IsON)
         { 
             GetComponent<Rigidbody>().mass = 75;
-        GetComponent<Rigidbody>().angularVelocity = new Vector3(0, 0, -15);
+            AudioSource.PlayClipAtPoint(audioSource.clip, this.transform.position);
+            GetComponent<Rigidbody>().angularVelocity = new Vector3(0, 0, -15);
         StartCoroutine(stoparm());
             IsON = false;
     }

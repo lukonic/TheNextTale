@@ -10,6 +10,7 @@ public class Healing : MonoBehaviour
     public GameObject effect;
     public GameObject canvas;
     public bool InTrigger;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class Healing : MonoBehaviour
         canvas.transform.GetChild(1).gameObject.SetActive(false);
         canvas.transform.GetChild(2).gameObject.SetActive(false);
         RealCanvas.GetComponent<EscapeMenu>().ijungtasHealer = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -60,6 +62,7 @@ public class Healing : MonoBehaviour
         {
             player.GetComponent<PlayerScore>().currentScore = player.GetComponent<PlayerScore>().currentScore - 3;
             player.GetComponent<PlayerHealth>().currentHealth++;
+            AudioSource.PlayClipAtPoint(audioSource.clip, this.transform.position);
             Instantiate(effect, player.transform.position + new Vector3(0, 1), new Quaternion(0, 0, 0, 0));
             CheckHP();
         }

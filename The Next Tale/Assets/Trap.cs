@@ -13,6 +13,7 @@ public class Trap : MonoBehaviour
     public GameObject blood;
     GameObject kraujas;
     public GameObject dust;
+    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class Trap : MonoBehaviour
         cameraMovement = GameObject.FindGameObjectWithTag("CameraFolder").GetComponent<CameraFollow>();
         mesh = GameObject.FindGameObjectWithTag("BaseMesh");
         ragdollas = GameObject.FindGameObjectWithTag("PlayerRagdoll");
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class Trap : MonoBehaviour
                 kraujas = Instantiate(blood, rag.transform.GetChild(1).gameObject.transform.position + new Vector3(0,1,0), rag.transform.rotation);
                 kraujas.transform.parent = rag.transform;
                 // Turn on the cursor back after dying
-
+                AudioSource.PlayClipAtPoint((AudioClip)Resources.Load("Hit"), this.transform.position);
                 // Show the endgame buttons
                 player.GetComponent<Rigidbody>().isKinematic = true;
                 player.GetComponent<BoxCollider>().enabled = false;
