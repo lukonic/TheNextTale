@@ -67,6 +67,7 @@
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledInspector\StyledTexturePreview.cs" />
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMono\StyledMonoBehaviour.cs" />
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMono\StyledMonoHideScriptField.cs" />
+     <Compile Include="Assets\Cheats.cs" />
      <Compile Include="Assets\Drop.cs" />
      <Compile Include="Assets\EnemyController.cs" />
      <Compile Include="Assets\EscapeMenu.cs" />

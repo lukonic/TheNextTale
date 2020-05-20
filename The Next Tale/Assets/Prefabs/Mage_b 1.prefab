@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 7342074982402764401}
   - component: {fileID: 696307030662105382}
   - component: {fileID: 2589408133142623624}
+  - component: {fileID: 2462917815788601867}
   m_Layer: 2
   m_Name: Mage_b 1
   m_TagString: Player
@@ -580,7 +581,11 @@ MonoBehaviour:
   jumps: 0
   NoKey: 0
   KeyInTime: 0
+  DMGtaken: 0
   Level1Time: 0
+  KeysLeft: 0
+  AllSecrets: 0
+  MissionCounter: 0
 --- !u!81 &696307030662105382
 AudioListener:
   m_ObjectHideFlags: 0
@@ -685,6 +690,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2462917815788601867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8334199495461366019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b18fc07ff99a0458521e68ca747273, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8334199495461366021
 GameObject:
   m_ObjectHideFlags: 0
