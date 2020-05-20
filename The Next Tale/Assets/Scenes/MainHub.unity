@@ -290,7 +290,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 7418845}
   m_OnClick:
     m_PersistentCalls:
@@ -13010,7 +13010,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 3 - Abandoned Lab
+  m_Text: EXP 40
 --- !u!222 &909978847
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20501,7 +20501,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 4 - Downway
+  m_Text: EXP 60
 --- !u!222 &1323154705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23635,7 +23635,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 1 - Dungeon
+  m_Text: Level 1
 --- !u!222 &1527073789
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27095,7 +27095,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Level 2 - Mesa Plains
+  m_Text: 20 EXP
 --- !u!222 &1726589458
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27822,7 +27822,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1750147470}
   m_OnClick:
     m_PersistentCalls:
@@ -29286,6 +29286,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a9ce81a15928143a91bf2621e90120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UI: {fileID: 0}
+  level2: {fileID: 7418844}
+  level3: {fileID: 1950053387}
+  level4: {fileID: 1750147469}
+  player: {fileID: 0}
+  camera: {fileID: 0}
+  RealCanvas: {fileID: 1655711733}
 --- !u!1 &1862023235
 GameObject:
   m_ObjectHideFlags: 0
@@ -30509,7 +30516,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1950053388}
   m_OnClick:
     m_PersistentCalls:

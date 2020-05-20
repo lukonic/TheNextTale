@@ -16,10 +16,12 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
+        if(Options != null)
         Options.SetActive(false);
         if(EscapeCanvas != null)
         EscapeCanvas.SetActive(false);
-        AreYouSure.SetActive(false);
+        if (AreYouSure != null)
+            AreYouSure.SetActive(false);
         
     }
     public void doExitGame()

@@ -25,6 +25,13 @@ public class PlayerScore : MonoBehaviour
         currentKeys = startKeys;
         gems = 0;
         secrets = 0;
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "MainHub")
+        {
+            key.text = "Experience: " + exp.ToString();
+        }
+        this.GetComponent<Saving>().Load();
     }
 
 

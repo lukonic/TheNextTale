@@ -79,6 +79,7 @@
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMaterial\Editor\StyledMessageDrawer.cs" />
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMaterial\Editor\StyledSpaceDrawer.cs" />
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMono\Editor\StyledMonoBehaviourEditor.cs" />
+     <Compile Include="Assets\Editor\CreatePrefabFromSelected.cs" />
      <Compile Include="Assets\Models\FSP\Platformer\Skybox Shaders\Editor\GradientSkyboxInspector.cs" />
      <Compile Include="Assets\Models\FSP\Platformer\Skybox Shaders\Editor\HorizonWithSunSkyboxInspector.cs" />
      <Compile Include="Assets\Models\FSP\Platformer\Skybox Shaders\Editor\RgbmCubedSkyboxInspector.cs" />

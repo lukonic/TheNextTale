@@ -448,7 +448,7 @@ MonoBehaviour:
   m_moveSpeed: 6
   tankas: 0
   m_currentDirection: {x: 0, y: 0, z: 0}
-  jumpHeight: 21
+  jumpHeight: 19
   groundLayers:
     serializedVersion: 2
     m_Bits: 1
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
-  currentHealth: 0
+  currentHealth: 5
   numberOfHearts: 5
   invincibility: 0
   hearts:
