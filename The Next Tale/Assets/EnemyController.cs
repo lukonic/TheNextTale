@@ -51,11 +51,13 @@ public class EnemyController : MonoBehaviour
             found = true;
         }
     }
+    /*
     void OnDrawGizmoSelected ()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadius);
+        //Gizmos.color = Color.red;
+        //Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
+    */
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player && allowkill && (player.GetComponent<Rigidbody>().velocity.y < -1))

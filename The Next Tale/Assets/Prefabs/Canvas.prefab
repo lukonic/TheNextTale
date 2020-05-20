@@ -275,7 +275,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -910,7 +910,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1380,7 +1380,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2328,7 +2328,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2474,6 +2474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632cce76c43977f45a435c68e1a23edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AreYouSure: {fileID: 0}
   Options: {fileID: 8488104439933701210}
   EscapeCanvas: {fileID: 4555590541336607583}
 --- !u!1 &4811147097476605697
@@ -3730,6 +3731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 632cce76c43977f45a435c68e1a23edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AreYouSure: {fileID: 0}
   Options: {fileID: 0}
   EscapeCanvas: {fileID: 0}
 --- !u!82 &6482496966318289894
@@ -5815,6 +5817,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EscapeCanvas: {fileID: 4555590541336607583}
+  ijungtasAchievements: 0
+  ijungtasHealer: 0
+  ijungtasLevelSelect: 0
+  ijungtasLevelComplete: 0
+  ijungtasDeath: 0
 --- !u!1 &8927817047886775742
 GameObject:
   m_ObjectHideFlags: 0

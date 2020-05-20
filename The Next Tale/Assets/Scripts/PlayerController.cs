@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
     {
         this.transform.position = LastSpawn+ new Vector3(0,1,0);
         Instantiate(effect, transform.position, transform.rotation);
+        AudioSource.PlayClipAtPoint((AudioClip)Resources.Load("teleport"), this.transform.position);
     }
     void Update()
     {

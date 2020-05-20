@@ -8,7 +8,7 @@ public class PickUpScore : MonoBehaviour
     PlayerScore playerScore;
     public GameObject effect;
     private bool pickuable;
-
+    private AudioSource audioSource;
     // Use this for initialization
 
     // Start is called before the first frame update
@@ -18,6 +18,7 @@ public class PickUpScore : MonoBehaviour
         playerScore = player.GetComponent<PlayerScore>();
         pickuable = false;
         StartCoroutine(ExecuteAfterTime2(0.5f));
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,6 +33,7 @@ public class PickUpScore : MonoBehaviour
                 gameObject.SetActive(false);
                 playerScore.gems++;
                 player.GetComponent<LevelInventory>().Gems++;
+                AudioSource.PlayClipAtPoint(audioSource.clip, this.transform.position);
             }
 
         }

@@ -5,12 +5,10 @@ using UnityEngine;
 public class FallScript : MonoBehaviour
 {
     GameObject player;
-    private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,7 +21,6 @@ public class FallScript : MonoBehaviour
             }
                  player.GetComponent<PlayerHealth>().TakeDamage(1);
             player.GetComponent<PlayerHealth>().invincibility = true;
-            AudioSource.PlayClipAtPoint((AudioClip)Resources.Load("scream"), this.transform.position);
             StartCoroutine(ExecuteAfterTime(2));
         }
     }

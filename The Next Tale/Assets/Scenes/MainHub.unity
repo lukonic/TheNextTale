@@ -301,7 +301,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: Level2
           m_BoolArgument: 0
@@ -27208,7 +27208,7 @@ PrefabInstance:
     - target: {fileID: 1075977117037700729, guid: ab86cb19dd59d8a409fc928fc531bb0c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1148865811034092961, guid: ab86cb19dd59d8a409fc928fc531bb0c,
         type: 3}
@@ -27218,7 +27218,7 @@ PrefabInstance:
     - target: {fileID: 1629756843338741079, guid: ab86cb19dd59d8a409fc928fc531bb0c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2390819155176820572, guid: ab86cb19dd59d8a409fc928fc531bb0c,
         type: 3}
@@ -27283,7 +27283,7 @@ PrefabInstance:
     - target: {fileID: 7267416557872302150, guid: ab86cb19dd59d8a409fc928fc531bb0c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8198890227603747569, guid: ab86cb19dd59d8a409fc928fc531bb0c,
         type: 3}
@@ -28950,7 +28950,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: Tutorial
           m_BoolArgument: 0
@@ -30520,7 +30520,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: Level3
           m_BoolArgument: 0
