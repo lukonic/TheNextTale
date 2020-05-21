@@ -71,8 +71,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -1404,7 +1406,7 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
-      Hash: 92d546be3665184550ae3221a3f92244
+      Hash: 410523e50c28e84edf6f31e406f9c9be
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameOverManager
@@ -1542,7 +1544,7 @@ ScriptsOnlyBuild:
     className: ChromaticAberration
   - hash:
       serializedVersion: 2
-      Hash: fcf84bcd9933f887a9006f806c8b8c1b
+      Hash: a9861f65adab28916de2d0a84c6c634d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Healing
@@ -1554,7 +1556,7 @@ ScriptsOnlyBuild:
     className: FallScript
   - hash:
       serializedVersion: 2
-      Hash: a278b8abf80aca62e71a5dd476918c5c
+      Hash: 01e5ddb3c6cc3fedc1effbcde2903e89
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenu

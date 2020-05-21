@@ -20,6 +20,7 @@ TagManager:
   - DeadCanvas
   - PostProc
   - Monster
+  - Canvasas123
   layers:
   - Default
   - TransparentFX

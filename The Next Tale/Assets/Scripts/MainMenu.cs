@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
     public GameObject AreYouSure;
     public GameObject Options;
     public GameObject EscapeCanvas;
-
+    public GameObject Controls;
     bool Motionblur;
     bool Bloom;
     bool AutoExposure;
@@ -22,7 +22,9 @@ public class MainMenu : MonoBehaviour
         EscapeCanvas.SetActive(false);
         if (AreYouSure != null)
             AreYouSure.SetActive(false);
-        
+        if (Controls != null)
+            Controls.SetActive(false);
+
     }
     public void doExitGame()
     {
@@ -38,6 +40,11 @@ public class MainMenu : MonoBehaviour
     {
        
         AreYouSure.SetActive(true);
+    }
+    public void doControls()
+    {
+
+        Controls.SetActive(true);
     }
     public void doOptions()
     {

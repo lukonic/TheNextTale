@@ -7,28 +7,28 @@ public class GameOverManager : MonoBehaviour
      GameObject player;
      GameObject ragdollas;
     GameObject Canvas;
-    GameObject RealCanvas;
+    public GameObject RealCanvas;
     public GameObject mesh;
     public CameraFollow cameraMovement;
     bool dead;
-
+    private AudioSource audioSource;
 
     private void Start()
     {
-        RealCanvas = GameObject.Find("Canvas");
         // Hide the cursor when playing
         Cursor.visible = false;
         dead = false;
         // This stops the camera movement after dying
         cameraMovement = GameObject.FindGameObjectWithTag("CameraFolder").GetComponent<CameraFollow>();
         GameObject.FindGameObjectWithTag("BaseMesh");
-
+        RealCanvas = GameObject.FindGameObjectWithTag("Canvasas123");
         player = GameObject.FindGameObjectWithTag("Player");
         ragdollas = GameObject.FindGameObjectWithTag("PlayerRagdoll");
         ragdollas.SetActive(false);
         Canvas = GameObject.FindGameObjectWithTag("DeadCanvas");
         Canvas.SetActive(false);
         RealCanvas.GetComponent<EscapeMenu>().ijungtasDeath = false;
+        audioSource = RealCanvas.GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -49,10 +49,11 @@ public class GameOverManager : MonoBehaviour
             mesh.SetActive(false);
             player.GetComponent<PlayerController>().enabled = false;
             player.GetComponent<Animator>().enabled = false;
-            dead = true;
+            
             Canvas.SetActive(true);
             RealCanvas.GetComponent<EscapeMenu>().ijungtasDeath = true;
-            GameObject.Find("Canvas").GetComponent<AudioSource>().Stop();
+            audioSource.Stop();
+            dead = true;
             //GameObject.Find("Camera").GetComponent<AudioListener>().enabled = true;
         }
     }

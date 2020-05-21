@@ -28,8 +28,7 @@ public class EscapeMenu : MonoBehaviour
             print("escape");
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            ijungtas = true;
-            
+            ijungtas = true;           
             EscapeCanvas.SetActive(true);
             Time.timeScale = 0;
         }
@@ -40,6 +39,7 @@ public class EscapeMenu : MonoBehaviour
             ijungtas = false;
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = false;
+            this.EscapeCanvas.GetComponent<MainMenu>().Options.SetActive(false);
             EscapeCanvas.SetActive(false);
             Time.timeScale = 1;
         }

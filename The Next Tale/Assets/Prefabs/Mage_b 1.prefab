@@ -448,7 +448,7 @@ MonoBehaviour:
   m_moveSpeed: 6
   tankas: 0
   m_currentDirection: {x: 0, y: 0, z: 0}
-  jumpHeight: 19
+  jumpHeight: 20
   groundLayers:
     serializedVersion: 2
     m_Bits: 1
@@ -547,6 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af10ff33ad37dda489d73557a84837e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RealCanvas: {fileID: 0}
   mesh: {fileID: 8334199495461366143}
   cameraMovement: {fileID: 0}
 --- !u!114 &4948627210580720268

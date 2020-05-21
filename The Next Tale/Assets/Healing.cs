@@ -6,7 +6,7 @@ public class Healing : MonoBehaviour
 {
     GameObject player;
     GameObject camera;
-    GameObject RealCanvas;
+    public GameObject RealCanvas;
     public GameObject effect;
     public GameObject canvas;
     public bool InTrigger;
@@ -14,9 +14,7 @@ public class Healing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        RealCanvas = GameObject.Find("Canvas");
         player = GameObject.FindGameObjectWithTag("Player");
-        canvas = GameObject.FindGameObjectWithTag("HealingCanvas");
         camera = GameObject.FindGameObjectWithTag("CameraFolder");
         canvas.transform.GetChild(0).gameObject.SetActive(false);
         canvas.transform.GetChild(1).gameObject.SetActive(false);

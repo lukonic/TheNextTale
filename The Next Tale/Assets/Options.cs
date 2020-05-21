@@ -70,6 +70,7 @@ public class Options : MonoBehaviour
         {
             volume = Slider.GetComponent<Slider>().value;
             AudioListener.volume = volume;
+            PlayerPrefs.SetFloat("Volume", volume);
         }
     }
     public void ChangeBlur()

@@ -55,7 +55,7 @@ public class AchievementManager : MonoBehaviour
         CreateAchievement("Level4", "Not curious enough", "Finish the level without losing a single life", 5, "Level4_NoDMG");
         CreateAchievement("Level4", "Ignition!", "Light up 10 pots", 5, "Level4_Torches");
         CreateAchievement("Level4", "Green is good", "Find all 14 green gems", 5, "Level4_Gems");
-        CreateAchievement("Level4", "Peekers advantage", "Find a secret in the level", 5, "Level4_Secret");
+        CreateAchievement("Level4", "Peekers advantage", "Find 2 secrets in the level", 5, "Level4_Secret");
         CreateAchievement("Level4", "AAAAAHHHHH", "Complete the level in under 150 seconds", 5, "Level4_Race");
         foreach (GameObject achievementlist in GameObject.FindGameObjectsWithTag("AchievementList"))
         {
